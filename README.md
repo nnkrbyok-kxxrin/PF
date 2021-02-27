@@ -41,7 +41,8 @@
 　　大切な顧客情報をしっかりと記録してお客様からの「ありがとう」を集めましょう！！  
   
 ## 設計書  
-後日記載  
+ER図：Untitled Diagram.pdf.zip  
+テーブル定義書：後日記載  
   
 ## チャレンジ要素一覧  
 https://docs.google.com/spreadsheets/d/17AZma3zC_Gj3DHHYpm3wZDIpFbjMoDgO7TZNrxL4emk/edit#gid=0  
