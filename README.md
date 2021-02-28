@@ -42,7 +42,7 @@
   
 ## 設計書  
 ER図：Untitled Diagram.pdf.zip  
-テーブル定義書：後日記載  
+テーブル定義書：https://docs.google.com/spreadsheets/d/1GMF8UBl32sjD90BU9ehY0gPHIcK-i6RJ/edit#gid=1243549839  
   
 ## チャレンジ要素一覧  
 https://docs.google.com/spreadsheets/d/17AZma3zC_Gj3DHHYpm3wZDIpFbjMoDgO7TZNrxL4emk/edit#gid=0  
