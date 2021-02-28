@@ -43,6 +43,7 @@
 ## 設計書  
 ER図：Untitled Diagram.pdf.zip  
 テーブル定義書：https://docs.google.com/spreadsheets/d/1GMF8UBl32sjD90BU9ehY0gPHIcK-i6RJ/edit#gid=1243549839  
+詳細設計書：https://docs.google.com/spreadsheets/d/1KUBlmVuWgmrHWjXbKxLZC28kP2SSsFmuDWF3ndUcz8U/edit#gid=1850781366  
   
 ## チャレンジ要素一覧  
 https://docs.google.com/spreadsheets/d/17AZma3zC_Gj3DHHYpm3wZDIpFbjMoDgO7TZNrxL4emk/edit#gid=0  
