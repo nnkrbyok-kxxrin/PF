@@ -2,28 +2,12 @@
 
 one:
   admin_id: 1
-  guest_name: MyString
-  guest_name_kana: MyString
-  guest_number: MyString
-  phone_number: MyString
-  address: MyText
-  birthday: 2021-03-01
-  sex: MyString
-  allergie: MyText
-  profession: MyText
+  guest_id: 1
   image_id: MyString
-  information: MyText
+  infomation: MyText
 
 two:
   admin_id: 1
-  guest_name: MyString
-  guest_name_kana: MyString
-  guest_number: MyString
-  phone_number: MyString
-  address: MyText
-  birthday: 2021-03-01
-  sex: MyString
-  allergie: MyText
-  profession: MyText
+  guest_id: 1
   image_id: MyString
-  information: MyText
+  infomation: MyText

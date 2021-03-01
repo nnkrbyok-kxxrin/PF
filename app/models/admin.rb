@@ -4,8 +4,9 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :tasks, dependent: :destroy
+  has_many :guests, dependent: :destroy
   has_many :posts, dependent: :destroy
-  has_many :add_infomations, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
 
 end

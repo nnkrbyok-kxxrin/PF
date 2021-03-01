@@ -1,0 +1,23 @@
+<h1>お客様カルテ投稿フォーム</h1>
+
+<%= form_with model: @guest, local:true do |f| %>
+  <h4>お客様番号</h4>
+  <%= f.text_field :number %>
+  <h4>氏名</h4>
+  <%= f.text_field :name %>
+  <h4>フリガナ</h4>
+  <%= f.text_field :name_kana %>
+  <h4>電話番号</h4>
+  <%= f.text_field :phone_number %>
+  <h4>住所</h4>
+  <%= f.text_field :address %>
+  <h4>誕生日</h4>
+  <%= f.text_field :birthday %>
+  <h4>性別</h4>
+  <%= f.text_field :sex %>
+  <h4>アレルギー</h4>
+  <%= f.text_field :allergie %>
+  <h4>職業</h4>
+  <%= f.text_field :profession %>
+  <%= f.submit '投稿' %>
+<% end %>

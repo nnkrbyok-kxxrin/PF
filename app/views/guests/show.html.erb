@@ -1,0 +1,36 @@
+<div class="guest-body">
+  <p>お客様番号：<%= @guest.number %></p>
+  <p>氏名：<%= @guest.name %></p>
+  <p>フリガナ：<%= @guest.name_kana %></p>
+  <p>電話番号：<%= @guest.phone_number %></p>
+  <p>住所：<%= @guest.address %></p>
+  <p>誕生日：<%= @guest.birthday %></p>
+  <p>性別：<%= @guest.sex %></p>
+  <p>アレルギー：<%= @guest.allergie %></p>
+  <p>職業：<%= @guest.profession %></p>
+  <p>投稿日時：<%= @guest.created_at.strftime('%Y/%m/%d') %></p>
+  <% if @guest.admin == current_admin %>
+    <%= link_to "削除", guest_path(@guest), method: :delete %>
+  <% end %>
+</div>
+
+<div class="posts">
+  <p>来店数：<%= @guest.posts.count %></p>
+  <% @guest.posts.each do |write| %>
+  <%= attachment_image_tag @guest, :image %>
+    <!--<p>投稿画像：<%= image_tag('sample-author1.jpg') %></p>-->
+    <%= write.infomation %>
+    <%= write.created_at.strftime('%Y/%m/%d') %><%= write.post %>
+    <% if write.admin == current_admin %>
+    <div class="post-delete">
+      <%= link_to "削除", guest_post_path(write.guest, guest), method: :delete %>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="new-post">
+  <%= form_with(model:[@guest, @post], local: true) do |f| %>
+    <%= f.text_area :infomation, rows:'5',placeholder: "情報追加" %>
+    <%= f.submit "投稿" %>
+  <% end %>
+</div>

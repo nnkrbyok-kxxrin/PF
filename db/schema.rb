@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_083540) do
-
-  create_table "add_infomations", force: :cascade do |t|
-    t.integer "admin_id"
-    t.integer "post_id"
-    t.string "image_id"
-    t.text "infomation"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2021_03_01_130416) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,31 +27,38 @@ ActiveRecord::Schema.define(version: 2021_03_01_083540) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "admin_id"
-    t.integer "post_id"
+    t.integer "guest_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "guests", force: :cascade do |t|
     t.integer "admin_id"
-    t.string "guest_name"
-    t.string "guest_name_kana"
-    t.string "guest_number"
+    t.string "name"
+    t.string "name_kana"
+    t.string "number"
     t.string "phone_number"
     t.text "address"
     t.date "birthday"
     t.string "sex"
     t.text "allergie"
     t.text "profession"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "admin_id"
+    t.integer "guest_id"
     t.string "image_id"
-    t.text "information"
+    t.text "infomation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "tasks", force: :cascade do |t|
     t.integer "admin_id"
-    t.string "body"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

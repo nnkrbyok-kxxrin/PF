@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   resources :tasks, only:[:create, :destroy]
 
-  resources :posts do
-    resources :add_infomations, only:[:create, :destroy]
+  resources :guests do
+    resources :posts, only:[:create, :destroy]
     resource :bookmarks, only:[:create, :destroy]
   end
 
