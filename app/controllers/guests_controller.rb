@@ -12,6 +12,8 @@ class GuestsController < ApplicationController
   end
 
   def index
+    # @guests = Guest.all
+    # ページング機能実装のため、上記を下記に変更
     @guests = Guest.page(params[:page]).reverse_order
   end
 
@@ -21,9 +23,14 @@ class GuestsController < ApplicationController
   end
 
   def edit
+    @guest = Guest.find(params[:id])
   end
 
   def update
+    @guest = Guest.find(params[:id])
+    @guest.update(guest_params)
+    redirect_to guest_path(@guest.id)
+
   end
 
   def destroy

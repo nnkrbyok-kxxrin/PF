@@ -1,21 +1,18 @@
 <% @guests.each do |guest| %>
 <div>
-  <p><%= link_to "▼", guest_path(guest.id) %></p>
-  <p>お客様番号：<%= guest.number %></p>
-  <p>氏名：<%= guest.name %></p>
-<!--  % if @guest.bookmarked_by?(current_admin) %>-->
-<!--    <p>-->
-<!--      %= link_to guest_bookmarks_path(@guest), method: :delete do %>-->
-<!--        ♥%= @guest.bookmarks %>-->
-<!--      % end %>-->
-<!--    </p>-->
-<!--    % else %>-->
-<!--    <p>-->
-<!--      %= link_to guest_bookmarks_path(@guest), method: :post do %>-->
-<!--        ♡%= @guest.bookmarks %>-->
-<!--      % end %>-->
-<!--    </p>-->
-<!--  % end %>-->
-<!--</div>-->
+  <p>
+  <% if guest.bookmarked_by?(current_admin) %>
+      <%= link_to guest_bookmarks_path(guest), method: :delete do %>
+        ♥
+      <% end %>
+    <% else %>
+      <%= link_to guest_bookmarks_path(guest), method: :post do %>
+        ♡
+      <% end %>
+  <% end %>
+  No.<%= guest.number %>
+  </p>
+  <p>氏名：<%= link_to guest.name, guest_path(guest.id) %></p>
+</div>
 <% end %>
 <%= paginate @guests %>

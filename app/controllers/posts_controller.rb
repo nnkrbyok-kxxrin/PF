@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     # write = Post.new(post_params)
     # write.admin_id = current_admin.id
     # 上記と下記は同じ意味
-    write = current_admin.post.new(post_params)
+    write = current_admin.posts.new(post_params)
     write.guest_id = guest.id
     write.save
     redirect_to guest_path(guest.id)
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image, :infomation)
+    params.require(:post).permit(:infomation, :image)
   end
 
 end
