@@ -19,7 +19,7 @@
 ### ターゲットユーザ  
 個人オーナー（主に女性）  
 例：個人美容サロンのサロンオーナー  
-  副業や内職などで個人で活動するアクセサリークリエイターなど  
+    副業や内職などで個人で活動するアクセサリークリエイターなど  
   
 ### 主な利用シーン  
   
@@ -35,13 +35,13 @@
 　　それだと大事な顧客情報を100%書き留めておくことは難しいかも‥？  
 　　そんな時‥‥！！  
 　　施術工程の合間にスマートフォンからでもパパッ！と記入出来る簡易カルテがあれば便利！  
-　　メモ書きした情報を後ほど編集することも可能、  
-　　前回の情報を検索して情報を確認することも可能。  
+　　ご来店ごとに情報を追加することも可能、  
+　　お客様を検索して過去の情報を確認することも可能。  
 　　些細なやりとりであっても「覚えてくれている」というのはお客様にとって嬉しいものです。  
 　　大切な顧客情報をしっかりと記録してお客様からの「ありがとう」を集めましょう！！  
   
 ## 設計書  
-ER図：Untitled Diagram.pdf.zip  
+ER図：<img src="https://github.com/nnkrbyok-kxxrin/PF/files/6068173/Untitled.Diagram.pdf" width="320px">  
 テーブル定義書：https://docs.google.com/spreadsheets/d/1GMF8UBl32sjD90BU9ehY0gPHIcK-i6RJ/edit#gid=1243549839  
 詳細設計書：https://docs.google.com/spreadsheets/d/1KUBlmVuWgmrHWjXbKxLZC28kP2SSsFmuDWF3ndUcz8U/edit#gid=1850781366  
   
