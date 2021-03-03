@@ -7,6 +7,12 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     @guest.admin_id = current_admin.id
+    # if guest_params[:address] == ""
+    #   @guest.address = "未記入"
+    # end
+    # デフォルト値設定
+    # 上記の記入は入力が空だった場合、DBに"未記入"と保存される
+    # Viewでのif文記述であればDBにnilで保存される
     @guest.save
     redirect_to guests_path
   end

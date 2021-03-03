@@ -3,11 +3,33 @@
   <p>氏名：<%= @guest.name %></p>
   <p>フリガナ：<%= @guest.name_kana %></p>
   <p>電話番号：<%= @guest.phone_number %></p>
+
+  <% if @guest.address == "" %>
+  <p>住所：未記入</p>
+  <% else %>
   <p>住所：<%= @guest.address %></p>
+  <% end %>
+
+  <% if @guest.birthday == nil %>
+  <p>誕生日：未記入</p>
+  <% else %>
   <p>誕生日：<%= @guest.birthday %></p>
+  <% end %>
+
   <p>性別：<%= @guest.sex %></p>
+
+  <% if @guest.allergie == "" %>
+  <p>アレルギー：未記入</p>
+  <% else %>
   <p>アレルギー：<%= @guest.allergie %></p>
+  <% end %>
+
+  <% if @guest.profession == "" %>
+  <p>職業：未記入</p>
+  <% else %>
   <p>職業：<%= @guest.profession %></p>
+  <% end %>
+
   <p>投稿日時：<%= @guest.created_at.strftime('%Y/%m/%d') %></p>
   <% if @guest.admin == current_admin %>
     <%= link_to "編集", edit_guest_path(@guest) %>
@@ -20,7 +42,10 @@
   <% @guest.posts.each do |write| %>
   <%= write.created_at.strftime('%Y/%m/%d') %></br>
   <%= write.infomation %></br>
-  <%= attachment_image_tag @post, :image, :fill, 40, 40, fallback: "phonto.JPG", size: "300x300" %>
+  <!--%= attachment_image_tag @post, :image, :fill, 40, 40, format: 'jpeg', fallback: "phonto.JPG", size: "300x300" %>-->
+  <!--上記の記述の:fill, 40, 40（画像縮小）は読み込みが重くなる＋サイズ指定と重複するため不要-->
+  <!--format: 'jpeg'も現時点で拡張子を指定して保存する必要がないため不要、下記記述に変更-->
+  <%= attachment_image_tag write, :image, fallback: "phonto.JPG", size: "300x300" %>
     <% if write.admin == current_admin %>
     <div class="post-delete">
       <%= link_to "削除", guest_post_path(write.guest,write), method: :delete %>
@@ -29,7 +54,7 @@
   <% end %>
 </div>
 <div class="new-post">
-  <%= form_with(model:[@guest, @post], local: true) do |f| %>
+  <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
     <%= f.text_area :infomation, rows:'5',placeholder: "入力してください" %></br>
     <%= f.attachment_field :image %></br>
     <%= f.submit "投稿" %>
