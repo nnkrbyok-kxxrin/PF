@@ -25,6 +25,11 @@
         <%= link_to "sign-in", new_admin_session_path %>
         </div>
     <% end %>
+
+    <% if admin_signed_in? %>
+      <%= render 'layouts/search', guests: @guests %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

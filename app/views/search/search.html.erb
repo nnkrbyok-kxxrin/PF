@@ -1,2 +1,21 @@
-<h1>Search#search</h1>
-<p>Find me in app/views/search/search.html.erb</p>
+<div class="container">
+  <div class="col-xs-12">
+      <table class="table">
+          <thead>
+              <tr>
+                <th>Guests search for '<%= @content %>'</th>
+              </tr>
+          </thead>
+        <% @records.each do |guest| %>
+          <tbody>
+              <tr>
+                <th>
+                  No.<%= guest.number %>
+                  氏名：<%= link_to guest.name, guest_path(guest.id) %>
+                </th>
+              </tr>
+          </tbody>
+        <% end %>
+      </table>
+  </div>
+</div>
