@@ -1,16 +1,11 @@
 <% @guests.each do |guest| %>
 <div>
   <p>
-  <% if guest.bookmarked_by?(current_admin) %>
-      <%= link_to guest_bookmarks_path(guest), method: :delete do %>
-        ♥
-      <% end %>
-    <% else %>
-      <%= link_to guest_bookmarks_path(guest), method: :post do %>
-        ♡
-      <% end %>
-  <% end %>
-  No.<%= guest.number %>
+    <span id="bookmarks_buttons_<%= guest.id %>">
+    <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
+    <%= render 'bookmarks/bookmark-btn', guest: guest %>
+    </span>
+    No.<%= guest.number %>
   </p>
   <p>氏名：<%= link_to guest.name, guest_path(guest.id) %></p>
 </div>
