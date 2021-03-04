@@ -1,28 +1,34 @@
-<h2>Log in</h2>
+<body class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
+        <div class="col-lg-4">
+          <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+            </br>
+            <!--%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>-->
+            <!--上記のform_forを以下のform_withに変更-->
+            <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
 
-<!--%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>-->
-<!--上記のform_forを以下のform_withに変更-->
-<%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+              <div class="visually-hidden">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "E-mail", required: "", autofocus: "" %>
+              </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+              <div class="visually-hidden">
+                <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: "Password (6 characters minimum)", required: "", autofocus: "" %>
+              </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+              <div class="visually-hidden">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: "Password confirmation", required: "", autofocus: "" %>
+              </div>
+              </br>
+              <div>
+                <%= f.submit "Sign in", class: 'w-100 btn btn-lg btn-secondary' %>
+              </div>
+            <% end %>
+          <p class="mt-5 mb-3 text-muted">© 2021</p>
+        </div>
+      <div class="col-md-4"></div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>

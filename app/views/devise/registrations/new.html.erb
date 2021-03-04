@@ -1,36 +1,40 @@
-<h2>Sign up</h2>
+<body class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
+        <div class="col-lg-4">
+          <h1 class="h3 mb-3 fw-normal">Sign up</h1>
+            </br>
+            <!--%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>-->
+            <!--上記のform_forを以下のform_withに変更-->
+            <%= form_with model: @admin, url: admin_registration_path, id: 'new_admin', class: 'new_admin', local: true do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
 
-<!--%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>-->
-<!--上記のform_forを以下のform_withに変更-->
-<%= form_with model: @admin, url: admin_registration_path, id: 'new_admin', class: 'new_admin', local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+              <div class="visually-hidden">
+                <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Name", required: "", autofocus: "" %>
+              </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+              <div class="visually-hidden">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "E-mail", required: "", autofocus: "" %>
+              </div>
+
+              <div class="visually-hidden">
+                <% if @minimum_password_length %>
+                <% end %>
+                <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: "Password (6 characters minimum)", required: "", autofocus: "" %>
+              </div>
+
+              <div class="visually-hidden">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: "Password confirmation", required: "", autofocus: "" %>
+              </div>
+              </br>
+              <div>
+                <%= f.submit "Sign up", class: 'w-100 btn btn-lg btn-secondary' %>
+              </div>
+            <% end %>
+          <p class="mt-5 mb-3 text-muted">© 2021</p>
+        </div>
+      <div class="col-md-4"></div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
