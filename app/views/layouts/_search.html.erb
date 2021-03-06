@@ -1,9 +1,6 @@
-<!--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-<div class="d-flex">
-<%= form_with url: search_path, method: :get, local: true do |f| %>
-  <%= f.text_field :content %>
-  <%= f.select :model, options_for_select({ "番号" => "number", "氏名" => "name" }) %>
-  <%= f.select :method, options_for_select({ "完全一致" => "perfect", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
-  <%= f.submit 'Search', class: 'btn btn-outline-success' %>
+<%= form_with url: search_path, method: :get, class: "d-flex", type: "search", placeholder: "検索", "aria-label": "Search", local: true do |f| %>
+  <%= f.text_field :content, class: " search-form-in mr-1" %>
+  <%= f.select :model, options_for_select({ "Number" => "number", "Name" => "name" }), {}, { class: 'form-select search-input-select-model mr-1' } %>
+  <%= f.select :method, options_for_select({ "Perfect" => "perfect", "Forward" => "forward", "Backward" => "backward", "Partial" => "partial" }), {}, { class: 'form-select search-input-select-model mr-1' } %>
+  <%= f.submit 'Search', class: 'btn btn-outline-secondary' %>
 <% end %>
-</div>
