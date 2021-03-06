@@ -1,13 +1,44 @@
-<% @guests.each do |guest| %>
-<div>
-  <p>
-    <span id="bookmarks_buttons_<%= guest.id %>">
-    <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
-    <%= render 'bookmarks/bookmark-btn', guest: guest %>
-    </span>
-    No.<%= guest.number %>
-  </p>
-  <p>氏名：<%= link_to guest.name, guest_path(guest.id) %></p>
+<div class="container mt-5">
+
+<table class="table table-light mb-5">
+  <form>
+    <div class="task mb-3">
+      <h4>Today's goal</h4></br>
+      <h6>ここにタスク投稿を表示したい</h6>
+    </div>
+    <div class="mb-3">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <%= submit_tag "Try!", class: 'w-100 btn btn-outline-secondary' %>
+  </form>
+</table>
+
+      <table class="table table-light table-hover index">
+        <thead>
+          <tr>
+            <th scope="col">Check</th>
+            <th scope="col">Guest Number</th>
+            <th scope="col">Guest Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @guests.each do |guest| %>
+          <tr>
+            <th scope="row">
+              <span id="bookmarks_buttons_<%= guest.id %>">
+              <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
+              <%= render 'bookmarks/bookmark-btn', guest: guest %>
+              </span>
+            </th>
+            <td>No.<%= guest.number %></td>
+            <td><%= link_to guest.name, guest_path(guest.id), class: "editlink" %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="mx-auto mt-5" style="width: 250px;">
+        <%= paginate @guests %>
+      </div>
+  </div>
 </div>
-<% end %>
-<%= paginate @guests %>

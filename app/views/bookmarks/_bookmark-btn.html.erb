@@ -1,9 +1,7 @@
 <% if guest.bookmarked_by?(current_admin) %>
-    <%= link_to guest_bookmarks_path(guest), method: :delete, remote: true do %>
-      ♥
+    <%= link_to guest_bookmarks_path(guest), method: :delete, class:"fas fa-heart heart", remote: true do %>
     <% end %>
   <% else %>
-    <%= link_to guest_bookmarks_path(guest), method: :post, remote: true do %>
-      ♡
+    <%= link_to guest_bookmarks_path(guest), method: :post, class:"far fa-heart heart", remote: true do %>
     <% end %>
 <% end %>
