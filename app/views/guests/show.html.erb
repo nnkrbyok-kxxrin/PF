@@ -1,40 +1,89 @@
 <div class="guest-body">
-  <p>お客様番号：<%= @guest.number %></p>
-  <p>氏名：<%= @guest.name %></p>
-  <p>フリガナ：<%= @guest.name_kana %></p>
-  <p>電話番号：<%= @guest.phone_number %></p>
-
-  <% if @guest.address == "" %>
-  <p>住所：未記入</p>
-  <% else %>
-  <p>住所：<%= @guest.address %></p>
-  <% end %>
-
-  <% if @guest.birthday == nil %>
-  <p>誕生日：未記入</p>
-  <% else %>
-  <p>誕生日：<%= @guest.birthday %></p>
-  <% end %>
-
-  <p>性別：<%= @guest.sex %></p>
-
-  <% if @guest.allergie == "" %>
-  <p>アレルギー：未記入</p>
-  <% else %>
-  <p>アレルギー：<%= @guest.allergie %></p>
-  <% end %>
-
-  <% if @guest.profession == "" %>
-  <p>職業：未記入</p>
-  <% else %>
-  <p>職業：<%= @guest.profession %></p>
-  <% end %>
-
-  <p>投稿日時：<%= @guest.created_at.strftime('%Y/%m/%d') %></p>
-  <% if @guest.admin == current_admin %>
-    <%= link_to "編集", edit_guest_path(@guest) %>
-    <%= link_to "削除", guest_path(@guest), method: :delete %>
-  <% end %>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="row">
+          <h4>Guest Infomation</h4>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Number</th>
+        <td><%= @guest.number %></td>
+      </tr>
+      <tr>
+        <th scope="row">Name</th>
+        <td><%= @guest.name %></td>
+      </tr>
+      <tr>
+        <th scope="row">Name-Kana</th>
+        <td><%= @guest.name_kana %></td>
+      </tr>
+      <tr>
+        <th scope="row">Phone-Number</th>
+        <td><%= @guest.phone_number %></td>
+      </tr>
+      <tr>
+        <th scope="row">Address</th>
+        <td>
+          <% if @guest.address == "" %>
+            <p>未記入</p>
+          <% else %>
+            <p><%= @guest.address %></p>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Birthday</th>
+        <td>
+          <% if @guest.birthday == nil %>
+            <p>未記入</p>
+          <% else %>
+            <p><%= @guest.birthday %></p>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Sex</th>
+        <td><%= @guest.sex %></td>
+      </tr>
+      <tr>
+        <th scope="row">Allergie</th>
+        <td>
+          <% if @guest.allergie == "" %>
+            <p>未記入</p>
+          <% else %>
+            <p><%= @guest.allergie %></p>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Profession</th>
+        <td>
+          <% if @guest.profession == "" %>
+            <p>未記入</p>
+          <% else %>
+            <p><%= @guest.profession %></p>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">First Time</th>
+        <td><%= @guest.created_at.strftime('%Y/%m/%d') %></td>
+        <td><% if @guest.admin == current_admin %>
+              <% "　" %>
+              <%= link_to edit_guest_path(@guest) do %>
+                <i class="fas fa-edit fa-2x"></i>
+              <% end %>｜
+              <%= link_to guest_path(@guest), method: :delete do %>
+                <i class="fas fa-trash-alt fa-2x"></i>
+              <% end %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="posts">
@@ -60,3 +109,6 @@
     <%= f.submit "投稿" %>
   <% end %>
 </div>
+
+
+<!--<th colspan="2">-->

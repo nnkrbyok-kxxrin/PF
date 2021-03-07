@@ -1,6 +1,9 @@
 class SearchController < ApplicationController
 
   def search
+  	# @guests = Guest.all
+    # ページング機能実装のため、上記を下記に変更
+    @guests = Guest.page(params[:page]).per(10)
 
 		@model = params[:model]
 		@content = params[:content]

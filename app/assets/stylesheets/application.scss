@@ -58,6 +58,7 @@
 .search-input-select-model{
     box-sizing: border-box;
     color: gray;
+    // background-color: #FFD5EC;
     margin: 0;
     font-family: inherit;
     font-size: inherit;
@@ -67,7 +68,11 @@
 }
 
 .task{
-  color: gray;
+  color: black;
+}
+
+.task-delete{
+  color: white;
 }
 
 .index{

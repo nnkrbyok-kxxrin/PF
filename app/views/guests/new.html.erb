@@ -1,23 +1,45 @@
-<h1>お客様カルテ投稿フォーム</h1>
-
-<%= form_with model: @guest, local:true do |f| %>
-  <h4>お客様番号</h4>
-  <%= f.text_field :number %>
-  <h4>氏名</h4>
-  <%= f.text_field :name %>
-  <h4>フリガナ</h4>
-  <%= f.text_field :name_kana %>
-  <h4>電話番号</h4>
-  <%= f.text_field :phone_number %>
-  <h4>住所</h4>
-  <%= f.text_field :address %>
-  <h4>誕生日</h4>
-  <%= f.text_field :birthday %>
-  <h4>性別</h4>
-  <%= f.text_field :sex %>
-  <h4>アレルギー</h4>
-  <%= f.text_field :allergie %>
-  <h4>職業</h4>
-  <%= f.text_field :profession %>
-  <%= f.submit '投稿' %>
-<% end %>
+<div class="background">
+  <div class="container mt-5">
+    <table class="table table-light mb-5">
+      <%= form_with model: @guest, local:true do |f| %>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Number</label>
+        <%= f.text_field :number, placeholder: "", class: "form-control mb-3" %>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Name</label>
+        <%= f.text_field :name, placeholder: "", class: "form-control mb-3" %>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Name-Kana</label>
+        <%= f.text_field :name_kana, placeholder: "", class: "form-control mb-3" %>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Phone Number</label>
+        <%= f.text_field :phone_number, placeholder: "", class: "form-control mb-3" %>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Street Address</label>
+        <%= f.text_field :address, placeholder: "", class: "form-control mb-3" %>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Birthday</label>
+        <%= f.text_field :birthday, placeholder: "", class: "form-control mb-3" %>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Sex</label>
+        <%= f.text_field :sex, placeholder: "", class: "form-control mb-3" %>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Allergies</label>
+        <%= f.text_field :allergie, placeholder: "", class: "form-control mb-3" %>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Profession</label>
+        <%= f.text_field :profession, placeholder: "", class: "form-control mb-4" %>
+      </div>
+      <%= f.submit "Create!", class: 'w-100 btn btn-secondary' %>
+      <% end %>
+    </table>
+  </div>
+</div>

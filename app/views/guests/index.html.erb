@@ -1,49 +1,51 @@
-<div class="container mt-5">
-
-  <table class="table table-light mb-5">
-    <div class="task mb-3">
-      <h4>Today's goal</h4></br>
-      <% @tasks.each do |task| %>
-      <%= task.body %>
-        <% if task.admin == current_admin %>
-          <%= "　" %>
-          <%= link_to "Clear!", task_path(task,task), class: 'task-delete', method: :delete %>
+<div class="background">
+  <div class="container mt-5">
+    <table class="table table-light mb-5">
+      <div class="task mb-3">
+        <h4>Today's goal</h4></br>
+        <% @tasks.each do |task| %>
+        <%= task.body %>
+          <% if task.admin == current_admin %>
+            <!--%= "　" %>-->
+            <%= link_to task_path(task,task), method: :delete do %>
+            <i class='fas fa-check-circle fa-lg task-delete'></i>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-        <%= form_with model: @task_new, local: true, url: tasks_path(@task), method: :post do |f| %>
-        <!--%= form_with model: @task_new, url: tasks_path(@task), method: :post, class: 'form-control mb-3', local: true do |f| %>-->
-          <%= f.text_field :body, rows:'5',placeholder: "", class: "form-control mb-3" %>
-        <%= f.submit "Try!", class: 'w-100 btn btn-outline-secondary' %>
+      </div>
+          <%= form_with model: @task_new, local: true, url: tasks_path(@task), method: :post do |f| %>
+          <!--%= form_with model: @task_new, url: tasks_path(@task), method: :post, class: 'form-control mb-3', local: true do |f| %>-->
+            <%= f.text_field :body, rows:'5',placeholder: "", class: "form-control mb-3" %>
+          <%= f.submit "Try!", class: 'w-100 btn btn-secondary' %>
+          <% end %>
+    </table>
+
+    <table class="table table-light table-hover index">
+      <thead>
+        <tr>
+          <th scope="col">Check</th>
+          <th scope="col">Guest Number</th>
+          <th scope="col">Guest Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @guests.each do |guest| %>
+        <tr>
+          <th scope="row">
+            <span id="bookmarks_buttons_<%= guest.id %>">
+            <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
+            <%= render 'bookmarks/bookmark-btn', guest: guest %>
+            </span>
+          </th>
+          <td>No.<%= guest.number %></td>
+          <td><%= link_to guest.name, guest_path(guest.id), class: "editlink" %></td>
+        </tr>
         <% end %>
-  </table>
+      </tbody>
+    </table>
 
-  <table class="table table-light table-hover index">
-    <thead>
-      <tr>
-        <th scope="col">Check</th>
-        <th scope="col">Guest Number</th>
-        <th scope="col">Guest Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @guests.each do |guest| %>
-      <tr>
-        <th scope="row">
-          <span id="bookmarks_buttons_<%= guest.id %>">
-          <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
-          <%= render 'bookmarks/bookmark-btn', guest: guest %>
-          </span>
-        </th>
-        <td>No.<%= guest.number %></td>
-        <td><%= link_to guest.name, guest_path(guest.id), class: "editlink" %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <div class="mx-auto mt-5" style="width: 250px;">
-    <%= paginate @guests %>
-  </div>
+      <div class="mx-auto mt-5" style="width: 200px;">
+        <%= paginate @guests %>
+      </div>
   </div>
 </div>
