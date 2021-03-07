@@ -29,21 +29,16 @@
   flex-direction: column;
 }
 
+.main {
+  flex:1;
+}
+
 .background {
   background-image: image-url('billy-huynh-v9bnfMCyKbg-unsplash.jpg');
   background-size: cover;
   background-attachment:fixed;
   height:100%;
 }
-
-.main {
-  flex:1;
-}
-
-// .top-image{
-//   margin-top: 20px;
-//   margin-left: 20px;
-// }
 
 .fw-normal{
   margin-top: 120px;
