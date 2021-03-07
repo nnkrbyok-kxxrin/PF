@@ -21,6 +21,10 @@ class GuestsController < ApplicationController
     # @guests = Guest.all
     # ページング機能実装のため、上記を下記に変更
     @guests = Guest.page(params[:page]).reverse_order
+
+    @task_new = Task.new
+    @tasks = Task.all
+    @task = Task.find_by(params[:id])
   end
 
   def show
