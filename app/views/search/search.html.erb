@@ -1,34 +1,38 @@
 <div class="background">
-  <div class="container mt-5">
-    <table class="table table-light table-hover index">
-      <thead>
-        <tr>
-          <th>Guests search for "<%= @content %>"</th>
-        </tr>
-        <tr>
-          <th scope="col">Check</th>
-          <th scope="col">Guest Number</th>
-          <th scope="col">Guest Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @records.each do |guest| %>
-        <tr>
-          <th scope="row">
-            <span id="bookmarks_buttons_<%= guest.id %>">
-            <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
-            <%= render 'bookmarks/bookmark-btn', guest: guest %>
-            </span>
-          </th>
-          <td>No.<%= guest.number %></td>
-          <td><%= link_to guest.name, guest_path(guest.id), class: "editlink" %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div class="container">
+    <div class="row">
 
-    <div class="mx-auto mt-4" style="width: 200px;">
-      <%= paginate @guests %>
+        <table class="table table-light table-hover index mt-5">
+          <thead>
+            <tr>
+              <th>Guests search for "<%= @content %>"</th>
+            </tr>
+            <tr>
+              <th scope="col">Check</th>
+              <th scope="col">Guest Number</th>
+              <th scope="col">Guest Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @records.each do |guest| %>
+            <tr>
+              <th scope="row">
+                <span id="bookmarks_buttons_<%= guest.id %>">
+                <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
+                <%= render 'bookmarks/bookmark-btn', guest: guest %>
+                </span>
+              </th>
+              <td>No.<%= guest.number %></td>
+              <td><%= link_to guest.name, guest_path(guest.id), class: "editlink" %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <div class="mx-auto mt-4">
+          <%= paginate @records %>
+        </div>
+
     </div>
   </div>
 </div>

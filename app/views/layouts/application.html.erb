@@ -13,6 +13,7 @@
 
   <body>
     <div class="wrapper">
+
       <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
@@ -46,12 +47,15 @@
                 <% if admin_signed_in? %>
                   <%= render 'layouts/search' %>
                 <% end %>
-            </div>
+              </div>
           </div>
         </nav>
       </header>
+
       <div class="main">
       <%= yield %>
+      </div>
+
       </div>
     </div>
   </body>

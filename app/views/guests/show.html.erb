@@ -1,114 +1,129 @@
-<div class="guest-body">
-  <table class="table table-borderless">
-    <thead>
-      <tr>
-        <th scope="row">
-          <h4>Guest Infomation</h4>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Number</th>
-        <td><%= @guest.number %></td>
-      </tr>
-      <tr>
-        <th scope="row">Name</th>
-        <td><%= @guest.name %></td>
-      </tr>
-      <tr>
-        <th scope="row">Name-Kana</th>
-        <td><%= @guest.name_kana %></td>
-      </tr>
-      <tr>
-        <th scope="row">Phone-Number</th>
-        <td><%= @guest.phone_number %></td>
-      </tr>
-      <tr>
-        <th scope="row">Address</th>
-        <td>
-          <% if @guest.address == "" %>
-            <p>未記入</p>
-          <% else %>
-            <p><%= @guest.address %></p>
+  <div class="background">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-6">
+          <div class="guest-body">
+            <table class="table table-borderless mt-5">
+              <thead>
+                <tr>
+                  <th scope="row">
+                    <h4>Guest Infomation</h4>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Number</th>
+                  <td><%= @guest.number %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Name</th>
+                  <td><%= @guest.name %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Name-Kana</th>
+                  <td><%= @guest.name_kana %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Phone-Number</th>
+                  <td><%= @guest.phone_number %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Address</th>
+                  <td>
+                    <% if @guest.address == "" %>
+                      <p>未記入</p>
+                    <% else %>
+                      <p><%= @guest.address %></p>
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Birthday</th>
+                  <td>
+                    <% if @guest.birthday == nil %>
+                      <p>未記入</p>
+                    <% else %>
+                      <p><%= @guest.birthday %></p>
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Sex</th>
+                  <td><%= @guest.sex %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Allergie</th>
+                  <td>
+                    <% if @guest.allergie == "" %>
+                      <p>未記入</p>
+                    <% else %>
+                      <p><%= @guest.allergie %></p>
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Profession</th>
+                  <td>
+                    <% if @guest.profession == "" %>
+                      <p>未記入</p>
+                    <% else %>
+                      <p><%= @guest.profession %></p>
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">First Time</th>
+                  <td><%= @guest.created_at.strftime('%Y/%m/%d') %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Number of visits</th>
+                  <td>"<%= @guest.posts.count %>" Thank you very much!</td>
+                  <td><% if @guest.admin == current_admin %>
+                        <% "　" %>
+                        <%= link_to edit_guest_path(@guest) do %>
+                          <i class="fas fa-edit fa-lg"></i>
+                        <% end %>｜
+                        <%= link_to guest_path(@guest), method: :delete do %>
+                          <i class="fas fa-trash-alt fa-lg"></i>
+                        <% end %>
+                    <% end %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="new-post mt-3 mb-3 ml-2">
+          <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
+            <%= f.text_area :infomation, rows: '3', placeholder: "", class: "form-control" %></br>
+            <%= f.attachment_field :image, class: "mb-3" %></br>
+            <%= f.submit "add to", class: "btn btn-outline-secondary mb-5" %>
           <% end %>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Birthday</th>
-        <td>
-          <% if @guest.birthday == nil %>
-            <p>未記入</p>
-          <% else %>
-            <p><%= @guest.birthday %></p>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Sex</th>
-        <td><%= @guest.sex %></td>
-      </tr>
-      <tr>
-        <th scope="row">Allergie</th>
-        <td>
-          <% if @guest.allergie == "" %>
-            <p>未記入</p>
-          <% else %>
-            <p><%= @guest.allergie %></p>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Profession</th>
-        <td>
-          <% if @guest.profession == "" %>
-            <p>未記入</p>
-          <% else %>
-            <p><%= @guest.profession %></p>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">First Time</th>
-        <td><%= @guest.created_at.strftime('%Y/%m/%d') %></td>
-        <td><% if @guest.admin == current_admin %>
-              <% "　" %>
-              <%= link_to edit_guest_path(@guest) do %>
-                <i class="fas fa-edit fa-2x"></i>
-              <% end %>｜
-              <%= link_to guest_path(@guest), method: :delete do %>
-                <i class="fas fa-trash-alt fa-2x"></i>
+        </div>
+
+      </div>
+
+      <div class="col-6">
+        <div class="posts">
+          <% @guest.posts.each do |write| %>
+            <%= write.created_at.strftime('%Y/%m/%d') %>｜
+              <% if write.admin == current_admin %>
+                <%= link_to guest_post_path(write.guest,write), method: :delete do %>
+                  <i class="fas fa-trash-alt fa-lg mb-3"></i>
+                <% end %></br>
               <% end %>
+            <!--%= attachment_image_tag @post, :image, :fill, 40, 40, format: 'jpeg', fallback: "phonto.JPG", size: "300x300" %>-->
+            <!--上記の記述の:fill, 40, 40（画像縮小）は読み込みが重くなる＋サイズ指定と重複するため不要-->
+            <!--format: 'jpeg'も現時点で拡張子を指定して保存する必要がないため不要、下記記述に変更-->
+            <%= attachment_image_tag write, :image, fallback: "phonto3.JPG", size: "300x300", class: "mb-3" %></br>
+            <p class="mb-5">
+            <%= write.infomation %></br></p>
           <% end %>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+        </div>
+      </div>
 
-<div class="posts">
-  <p>来店数：<%= @guest.posts.count %></p>
-  <% @guest.posts.each do |write| %>
-  <%= write.created_at.strftime('%Y/%m/%d') %></br>
-  <%= write.infomation %></br>
-  <!--%= attachment_image_tag @post, :image, :fill, 40, 40, format: 'jpeg', fallback: "phonto.JPG", size: "300x300" %>-->
-  <!--上記の記述の:fill, 40, 40（画像縮小）は読み込みが重くなる＋サイズ指定と重複するため不要-->
-  <!--format: 'jpeg'も現時点で拡張子を指定して保存する必要がないため不要、下記記述に変更-->
-  <%= attachment_image_tag write, :image, fallback: "phonto.JPG", size: "300x300" %>
-    <% if write.admin == current_admin %>
-    <div class="post-delete">
-      <%= link_to "削除", guest_post_path(write.guest,write), method: :delete %>
     </div>
-    <% end %>
-  <% end %>
-</div>
-<div class="new-post">
-  <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
-    <%= f.text_area :infomation, rows:'5',placeholder: "入力してください" %></br>
-    <%= f.attachment_field :image %></br>
-    <%= f.submit "投稿" %>
-  <% end %>
-</div>
-
-
-<!--<th colspan="2">-->
+  </div>

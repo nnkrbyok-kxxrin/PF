@@ -1,6 +1,7 @@
 <div class="background">
-  <div class="container mt-5">
-    <table class="table table-light mb-5">
+  <div class="container">
+    <!--<div class="row">-->
+
       <%= form_with model: @guest, local:true do |f| %>
       <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Number</label>
@@ -40,6 +41,7 @@
       </div>
       <%= f.submit "Create!", class: 'w-100 btn btn-secondary' %>
       <% end %>
-    </table>
+
+    <!--</div>-->
   </div>
 </div>

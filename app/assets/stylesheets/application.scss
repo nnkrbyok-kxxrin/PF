@@ -95,3 +95,40 @@
 .page-link{
   color: gray;
 }
+
+table {
+  border: 1px solid;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 6px;
+}
+table thead th,
+table tbody th,
+table tbody td {
+  padding: .6em 3em;
+  border-bottom: 1px solid;
+}
+table thead th {
+}
+table tbody th {
+}
+table thead th + th,
+table tbody td {
+  border-left: 1px solid;
+}
+table tbody tr:last-child th,
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+table thead tr:first-child th:first-child {
+  border-radius: 5px 0 0 0;
+}
+table thead tr:first-child th:last-child {
+  border-radius: 0 5px 0 0;
+}
+table tbody tr:last-child th:first-child {
+  border-radius: 0 0 0 5px;
+}
+table tbody tr:last-child th:last-child {
+  border-radius: 0 0 5px 0;
+}
