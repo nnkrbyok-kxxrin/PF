@@ -13,8 +13,11 @@ class GuestsController < ApplicationController
     # デフォルト値設定
     # 上記の記入は入力が空だった場合、DBに"未記入"と保存される
     # Viewでのif文記述であればDBにnilで保存される
-    @guest.save
-    redirect_to guests_path
+    if @guest.save
+        redirect_to guests_path
+    else
+        render :new
+    end
   end
 
   def index
@@ -25,6 +28,9 @@ class GuestsController < ApplicationController
     @task_new = Task.new
     @tasks = Task.all
     @task = Task.find_by(params[:id])
+  end
+
+  def info
   end
 
   def show
@@ -38,8 +44,11 @@ class GuestsController < ApplicationController
 
   def update
     @guest = Guest.find(params[:id])
-    @guest.update(guest_params)
-    redirect_to guest_path(@guest.id)
+    if @guest.update(guest_params)
+        redirect_to guest_path(@guest.id)
+    else
+        render :edit
+    end
 
   end
 

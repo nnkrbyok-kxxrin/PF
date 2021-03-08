@@ -1,10 +1,10 @@
   <div class="background">
     <div class="container">
-      <div class="row">
 
-        <div class="col-6">
+      <div class="row">
+        <div class="col-md-6">
           <div class="guest-body">
-            <table class="table table-borderless mt-5">
+            <table class="table table-borderless table-light table-customize mt-5">
               <thead>
                 <tr>
                   <th scope="row">
@@ -83,36 +83,34 @@
                   <td><% if @guest.admin == current_admin %>
                         <% "　" %>
                         <%= link_to edit_guest_path(@guest) do %>
-                          <i class="fas fa-edit fa-lg"></i>
+                          <i class="fas fa-edit fa-lg icon-link"></i>
                         <% end %>｜
                         <%= link_to guest_path(@guest), method: :delete do %>
-                          <i class="fas fa-trash-alt fa-lg"></i>
+                          <i class="fas fa-trash-alt fa-lg icon-link"></i>
                         <% end %>
                     <% end %>
                   </td>
                 </tr>
               </tbody>
             </table>
+            <div class="new-post my-3">
+              <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
+                <%= f.text_area :infomation, rows: '3', placeholder: "", class: "form-control" %></br>
+                <%= f.attachment_field :image, class: "mb-3" %></br>
+                <%= f.submit "add to", class: "btn btn-secondary mb-5" %>
+              <% end %>
+            </div>
           </div>
         </div>
-
-        <div class="new-post mt-3 mb-3 ml-2">
-          <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
-            <%= f.text_area :infomation, rows: '3', placeholder: "", class: "form-control" %></br>
-            <%= f.attachment_field :image, class: "mb-3" %></br>
-            <%= f.submit "add to", class: "btn btn-outline-secondary mb-5" %>
-          <% end %>
-        </div>
-
       </div>
 
-      <div class="col-6">
+      <div class="col-md-6">
         <div class="posts">
           <% @guest.posts.each do |write| %>
             <%= write.created_at.strftime('%Y/%m/%d') %>｜
               <% if write.admin == current_admin %>
                 <%= link_to guest_post_path(write.guest,write), method: :delete do %>
-                  <i class="fas fa-trash-alt fa-lg mb-3"></i>
+                  <i class="fas fa-trash-alt fa-lg icon-link mb-3"></i>
                 <% end %></br>
               <% end %>
             <!--%= attachment_image_tag @post, :image, :fill, 40, 40, format: 'jpeg', fallback: "phonto.JPG", size: "300x300" %>-->

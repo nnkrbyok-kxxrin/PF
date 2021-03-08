@@ -4,6 +4,12 @@ class Guest < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
 
+  validates :name, presence: true
+  validates :name_kana, presence: true
+  validates :number, presence: true
+  validates :phone_number, presence: true
+  validates :sex, presence: true
+
   def bookmarked_by?(admin)
     bookmarks.where(admin_id: admin.id).exists?
   end

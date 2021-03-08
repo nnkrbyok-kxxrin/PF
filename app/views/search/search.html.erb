@@ -2,10 +2,11 @@
   <div class="container">
     <div class="row">
 
-        <table class="table table-light table-hover index mt-5">
+        <table class="table table-light table-hover table-customize mt-5">
           <thead>
             <tr>
               <th>Guests search for "<%= @content %>"</th>
+              <th></th>
             </tr>
             <tr>
               <th scope="col">Check</th>
@@ -23,7 +24,7 @@
                 </span>
               </th>
               <td>No.<%= guest.number %></td>
-              <td><%= link_to guest.name, guest_path(guest.id), class: "editlink" %></td>
+              <td><%= link_to guest.name, guest_path(guest.id), class: "name-link" %></td>
             </tr>
             <% end %>
           </tbody>

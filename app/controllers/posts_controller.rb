@@ -9,7 +9,6 @@ class PostsController < ApplicationController
     write.guest_id = guest.id
     write.save
     redirect_to guest_path(guest.id)
-
   end
 
   def destroy

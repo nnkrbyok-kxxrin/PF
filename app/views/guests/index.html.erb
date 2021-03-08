@@ -2,15 +2,15 @@
   <div class="container">
     <div class="row">
 
-      <div class="table table-light mb-5">
-        <div class="task mt-5 mb-3">
-          <h4>Today's goal</h4></br>
+      <div class="table table-light task-table mt-5 mb-3">
+        <div class="task mx-3 my-3">
+          <h4><i class="fas fa-star-and-crescent"></i> <i class="fas fa-sun"></i> Only one <%= link_to "go", guests_info_path, class: "go-link" %>al for today!</h4></br>
           <% @tasks.each do |task| %>
           <%= task.body %>
             <% if task.admin == current_admin %>
               <!--%= "　" %>-->
               <%= link_to task_path(task,task), method: :delete do %>
-              <i class='fas fa-check-circle fa-lg task-delete'></i>
+              <i class='fas fa-check-circle fa-lg icon-link'></i>
               <% end %>
             <% end %>
           <% end %>
@@ -18,13 +18,13 @@
 
             <%= form_with model: @task_new, local: true, url: tasks_path(@task), method: :post do |f| %>
             <!--%= form_with model: @task_new, url: tasks_path(@task), method: :post, class: 'form-control mb-3', local: true do |f| %>-->
-      </div>
+        </div>
               <%= f.text_field :body, rows:'5',placeholder: "", class: "form-control" %>
             <%= f.submit "Try!", class: 'w-100 btn btn-secondary mt-2 mb-3' %>
             <% end %>
 
 
-      <table class="table table-light table-hover index">
+      <table class="table table-light table-hover table-customize">
         <thead>
           <tr>
             <th scope="col">Check</th>
@@ -42,13 +42,13 @@
               </span>
             </th>
             <td>No.<%= guest.number %></td>
-            <td><%= link_to guest.name, guest_path(guest.id), class: "editlink" %></td>
+            <td><%= link_to guest.name, guest_path(guest.id), class: "name-link" %></td>
           </tr>
           <% end %>
         </tbody>
       </table>
 
-        <div class="mx-auto mt-5">
+        <div class="mx-auto mt-4">
           <%= paginate @guests %>
         </div>
 

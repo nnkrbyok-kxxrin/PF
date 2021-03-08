@@ -17,6 +17,8 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+
+// 背景画像関係
 .wrapper {
   // 1画面に収める
   position: absolute;
@@ -44,6 +46,7 @@
   margin-top: 120px;
 }
 
+// 検索
 .search-form-in{
   border: 1px solid;
   color: gray;
@@ -67,27 +70,36 @@
     padding: 5px;
 }
 
+// 編集・削除アイコンリンク
+.icon-link{
+  color: gray;
+}
+
+// 今日の目標(お客様一覧ページ)
+.task-table{
+  border: 1px solid;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 6px;
+  border-color: gray;
+}
+
 .task{
-  color: black;
-}
-
-.task-delete{
-  color: white;
-}
-
-.index{
   color: gray;
 }
 
-.editlink{
-  text-decoration: none;
-  color: gray;
+// お客様一覧ページ
+
+.go-link{
+  color:#FF82B2;
 }
 
+// ブックマーク（いいね）部分テンプレート
 .heart{
   color: #FF82B2;
 }
 
+// ページネーション
 .page-item{
   color: gray;
 }
@@ -96,11 +108,28 @@
   color: gray;
 }
 
+// エラーメッセージ
+.errors-message{
+  color: black;
+}
+
+// お客様一覧・検索結果一覧テーブル
+.table-customize{
+  border-color: gray;
+  color: gray;
+}
+
+.name-link{
+  text-decoration: none;
+  color: gray;
+}
+
 table {
   border: 1px solid;
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 6px;
+  border-color: gray;
 }
 table thead th,
 table tbody th,
@@ -108,14 +137,15 @@ table tbody td {
   padding: .6em 3em;
   border-bottom: 1px solid;
 }
-table thead th {
-}
-table tbody th {
-}
-table thead th + th,
-table tbody td {
-  border-left: 1px solid;
-}
+// table thead th {
+// }
+// table tbody th {
+// }
+// table thead th + th,
+// table tbody td {
+//   border-left: 1px solid;
+// }
+// 上記、table-hoverを指定する際は不要
 table tbody tr:last-child th,
 table tbody tr:last-child td {
   border-bottom: none;

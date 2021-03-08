@@ -5,4 +5,6 @@ class Post < ApplicationRecord
 
   attachment :image
 
+  validates :infomation, presence: true
+
 end
