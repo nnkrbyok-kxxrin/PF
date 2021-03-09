@@ -30,13 +30,16 @@ class GuestsController < ApplicationController
     @task = Task.find_by(params[:id])
   end
 
-  def info
-  end
-
   def show
     @guest = Guest.find(params[:id])
-    # @guest.page(params[:page]).per(1)
     @post = Post.new
+    # Postのページング機能実装のため、下記を追記
+    @posts = @guest.posts.page(params[:page]).reverse_order.per(1)
+    # Postのページング機能・非同期実装のため、下記を追記
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit

@@ -9,13 +9,19 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!--トップページ用フォント-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <!--その他ページフォント-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <div class="wrapper">
 
       <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light text-font">
           <div class="container-fluid">
             <div>
               <%= link_to "Thanks Collection", root_path, class: 'navbar-brand' %>
@@ -54,14 +60,12 @@
 
       <div class="main">
         <%= yield %>
+        <footer>
+    		  © Thanks Collection
+        </footer>
       </div>
 
 
-      <footer>
-        <div class="footer">
-  		  <center >© Thanks Collection</center>
-  		  </div>
-      </footer>
 
       </div>
     </div>

@@ -1,10 +1,10 @@
-<div class="background">
+<div class="background text-font">
   <div class="container">
     <div class="row">
 
       <div class="table table-light task-table mt-5 mb-3">
         <div class="task mx-3 my-3">
-          <h4><i class="fas fa-star-and-crescent"></i> <i class="fas fa-sun"></i> Only one <%= link_to "go", guests_info_path, class: "go-link" %>al for today!</h4></br>
+          <h4><i class="fas fa-star-and-crescent"></i> <i class="fas fa-sun"></i> Only one <%= link_to "go", about_path, class: "go-link" %>al for today!</h4></br>
           <% @tasks.each do |task| %>
           <%= task.body %>
             <% if task.admin == current_admin %>
