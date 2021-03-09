@@ -35,6 +35,7 @@ class GuestsController < ApplicationController
 
   def show
     @guest = Guest.find(params[:id])
+    # @guest.page(params[:page]).per(1)
     @post = Post.new
   end
 

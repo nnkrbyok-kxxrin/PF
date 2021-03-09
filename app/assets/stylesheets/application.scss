@@ -18,6 +18,7 @@
 @import 'font-awesome';
 
 
+
 // 背景画像関係
 .wrapper {
   // 1画面に収める
@@ -44,6 +45,23 @@
 
 .fw-normal{
   margin-top: 120px;
+}
+
+.box-background{
+  background-color: white;
+  border-color: gray;
+  color: gray;
+
+  border: 1px solid;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 6px;
+  border-color: gray;
+}
+
+// フッター
+.footer{
+  color: black;
 }
 
 // 検索
@@ -161,4 +179,11 @@ table tbody tr:last-child th:first-child {
 }
 table tbody tr:last-child th:last-child {
   border-radius: 0 0 5px 0;
+}
+
+// お客様情報追加の画像
+img {
+width:100%;
+max-width: 100%;
+height: auto;
 }

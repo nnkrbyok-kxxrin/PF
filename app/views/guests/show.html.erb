@@ -1,10 +1,11 @@
-  <div class="background">
-    <div class="container">
-
-      <div class="row">
+<div class="background">
+  <div class="container">
+    <div class="row py-5">
+      <!--<div class="col-md-2"></div>-->
+      <!--<div class="col-md-8 py-4 box-background">-->
         <div class="col-md-6">
           <div class="guest-body">
-            <table class="table table-borderless table-light table-customize mt-5">
+            <table class="table table-borderless table-light table-customize mt-5 py-3">
               <thead>
                 <tr>
                   <th scope="row">
@@ -102,9 +103,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6 my-5 py-5 px-5 box-background">
         <div class="posts">
           <% @guest.posts.each do |write| %>
             <%= write.created_at.strftime('%Y/%m/%d') %>｜
@@ -116,12 +116,16 @@
             <!--%= attachment_image_tag @post, :image, :fill, 40, 40, format: 'jpeg', fallback: "phonto.JPG", size: "300x300" %>-->
             <!--上記の記述の:fill, 40, 40（画像縮小）は読み込みが重くなる＋サイズ指定と重複するため不要-->
             <!--format: 'jpeg'も現時点で拡張子を指定して保存する必要がないため不要、下記記述に変更-->
-            <%= attachment_image_tag write, :image, fallback: "phonto3.JPG", size: "300x300", class: "mb-3" %></br>
+            <%= attachment_image_tag write, :image, fallback: "phonto3.JPG", size: "480x640", class: "mb-3" %></br>
             <p class="mb-5">
             <%= write.infomation %></br></p>
           <% end %>
         </div>
+        <!--<div class="mx-auto mt-4">-->
+        <!--  %= paginate @guest %>-->
+        <!--</div>-->
       </div>
 
+    </div>
     </div>
   </div>
