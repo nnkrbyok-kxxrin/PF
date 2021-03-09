@@ -1,12 +1,14 @@
-<div class="background text-font">
-  <div class="container">
-    <div class="row py-5">
-      <div class="col-md-2"></div>
-      <div class="col-md-8 py-4 box-background">
+<div class='background text-font'>
+  <div class='container'>
+    <div class='row py-5'>
+
+      <div class='col-md-2'></div>
+
+      <div class='col-md-8 py-4 box-background'>
 
         <% if @guest.errors.any? %>
           <div>
-            <ul style="errors-message">
+            <ul style='errors-message'>
               <% @guest.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
               <% end %>
@@ -14,49 +16,48 @@
           </div>
         <% end %>
 
-          <%= form_with model: @guest, local:true do |f| %>
-          <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Number</label>
-            <%= f.text_field :number, placeholder: "", class: "form-control mb-3" %>
-          </div>
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Name</label>
-            <%= f.text_field :name, placeholder: "", class: "form-control mb-3" %>
-          </div>
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Name-Kana</label>
-            <%= f.text_field :name_kana, placeholder: "", class: "form-control mb-3" %>
-          </div>
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Phone Number</label>
-            <%= f.text_field :phone_number, placeholder: "", class: "form-control mb-3" %>
-          </div>
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Street Address</label>
-            <%= f.text_field :address, placeholder: "", class: "form-control mb-3" %>
-          </div>
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Birthday</label>
-            <%= f.text_field :birthday, placeholder: "", class: "form-control mb-3" %>
-          </div>
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Sex</label>
-            <%= f.text_field :sex, placeholder: "", class: "form-control mb-3" %>
-          </div>
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Allergies</label>
-            <%= f.text_field :allergie, placeholder: "", class: "form-control mb-3" %>
-          </div>
-          <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Profession</label>
-            <%= f.text_field :profession, placeholder: "", class: "form-control mb-4" %>
-          </div>
-          <%= f.submit "Create!", class: 'w-100 btn btn-secondary' %>
-          <% end %>
+            <%= form_with model: @guest, local:true do |f| %>
+            <div class='mb-3'>
+              <label for='formGroupExampleInput' class='form-label'>Number</label>
+              <%= f.text_field :number, placeholder: '', class: 'form-control mb-3' %>
+            </div>
+            <div class='mb-3'>
+              <label for='formGroupExampleInput2' class='form-label'>Name</label>
+              <%= f.text_field :name, placeholder: '', class: 'form-control mb-3' %>
+            </div>
+            <div class='mb-3'>
+              <label for='formGroupExampleInput2' class='form-label'>Name-Kana</label>
+              <%= f.text_field :name_kana, placeholder: '', class: 'form-control mb-3' %>
+            </div>
+            <div class='mb-3'>
+              <label for='formGroupExampleInput2' class='form-label'>Phone Number</label>
+              <%= f.text_field :phone_number, placeholder: '', class: 'form-control mb-3' %>
+            </div>
+            <div class='mb-3'>
+              <label for='formGroupExampleInput2' class='form-label'>Street Address</label>
+              <%= f.text_field :address, placeholder: '', class: 'form-control mb-3' %>
+            </div>
+            <div class='mb-3'>
+              <label for='formGroupExampleInput2' class='form-label'>Birthday</label>
+              <%= f.text_field :birthday, placeholder: '', class: 'form-control mb-3' %>
+            </div>
+            <div class='mb-3'>
+              <label for='formGroupExampleInput2' class='form-label'>Sex</label>
+              <%= f.text_field :sex, placeholder: '', class: 'form-control mb-3' %>
+            </div>
+            <div class='mb-3'>
+              <label for='formGroupExampleInput2' class='form-label'>Allergies</label>
+              <%= f.text_field :allergie, placeholder: '', class: 'form-control mb-3' %>
+            </div>
+            <div class='mb-3'>
+              <label for='formGroupExampleInput2' class='form-label'>Profession</label>
+              <%= f.text_field :profession, placeholder: '', class: 'form-control mb-4' %>
+            </div>
+            <%= f.submit 'Create!', class: 'w-100 btn btn-secondary' %>
+            <% end %>
 
-        <div class="col-md-2"></div>
+        </div>
 
-      </div>
     </div>
   </div>
 </div>

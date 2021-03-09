@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
+@import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
@@ -33,20 +33,20 @@
 }
 
 .main {
-  flex:1;
+  flex: 1;
   position: relative;
 }
 
 .background {
   background-image: image-url('billy-huynh-v9bnfMCyKbg-unsplash.jpg');
   background-size: cover;
-  background-attachment:fixed;
-  height:100%;
+  background-attachment: fixed;
+  height: 100%;
 }
 
-.fw-normal{
-  margin-top: 120px;
-}
+// .fw-normal{
+//   margin-top: 120px;
+// }
 
 .box-background{
   background-color: white;
@@ -57,17 +57,18 @@
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 6px;
-  border-color: gray;
 }
 
 // フッター
 footer{
-  color: black;
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    text-align: center;
+  font-family: 'Caveat', cursive;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #444444;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 // トップページ以外用フォント
@@ -76,12 +77,28 @@ footer{
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+// 文字
+.text{
+  color: #444444;
+}
+
+// 文字リンク
+.text-link{
+  text-decoration: none;
+  color: gray;
+}
+
+// アイコンリンク
+.icon-link{
+  color: gray;
+}
+
 // トップページ
 .top-message{
   font-family: 'Caveat', cursive;
   color: #444444;
   font-size: 15ex;
-  text-align:center;
+  text-align: center;
 }
 
 // 検索
@@ -96,21 +113,15 @@ footer{
   padding: 5px;
 }
 
-.search-input-select-model{
+.search-select{
     box-sizing: border-box;
     color: gray;
-    // background-color: #FFD5EC;
     margin: 0;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     border-radius: 5px;
     padding: 5px;
-}
-
-// 編集・削除アイコンリンク
-.icon-link{
-  color: gray;
 }
 
 // 今日の目標(お客様一覧ページ)
@@ -126,13 +137,13 @@ footer{
   color: gray;
 }
 
-// お客様一覧ページ
-.go-link{
-  color:#FF82B2;
+// aboutリンク
+.about-link{
+  color: #FF82B2;
 }
 
 // ブックマーク（いいね）部分テンプレート
-.heart{
+.icon-heart{
   color: #FF82B2;
 }
 
@@ -147,17 +158,12 @@ footer{
 
 // エラーメッセージ
 .errors-message{
-  color: black;
+  color: #444444;
 }
 
 // お客様一覧・検索結果一覧テーブル
 .table-customize{
   border-color: gray;
-  color: gray;
-}
-
-.name-link{
-  text-decoration: none;
   color: gray;
 }
 
@@ -202,7 +208,7 @@ table tbody tr:last-child th:last-child {
 
 // お客様情報追加の画像
 img {
-width:100%;
+width: 100%;
 max-width: 100%;
 height: auto;
 }

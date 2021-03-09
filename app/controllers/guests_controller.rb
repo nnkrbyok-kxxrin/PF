@@ -33,13 +33,13 @@ class GuestsController < ApplicationController
   def show
     @guest = Guest.find(params[:id])
     @post = Post.new
-    # Postのページング機能実装のため、下記を追記
     @posts = @guest.posts.page(params[:page]).reverse_order.per(1)
-    # Postのページング機能・非同期実装のため、下記を追記
+    # Postのページング機能実装のため、上記を追記
     respond_to do |format|
       format.html
       format.js
     end
+    # Postのページング機能・非同期実装のため、上記４行を追記
   end
 
   def edit

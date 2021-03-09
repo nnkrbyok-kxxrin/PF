@@ -1,38 +1,38 @@
-<div class="background">
-  <div class="container">
-    <div class="row">
+<div class='background text-font'>
+  <div class='container'>
+    <div class='row'>
 
-        <table class="table table-light table-hover table-customize mt-5">
-          <thead>
-            <tr>
-              <th>Guests search for "<%= @content %>"</th>
-              <th></th>
-            </tr>
-            <tr>
-              <th scope="col">Check</th>
-              <th scope="col">Guest Number</th>
-              <th scope="col">Guest Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @records.each do |guest| %>
-            <tr>
-              <th scope="row">
-                <span id="bookmarks_buttons_<%= guest.id %>">
-                <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
-                <%= render 'bookmarks/bookmark-btn', guest: guest %>
-                </span>
-              </th>
-              <td>No.<%= guest.number %></td>
-              <td><%= link_to guest.name, guest_path(guest.id), class: "name-link" %></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+      <table class='table table-light table-hover table-customize mt-5 px-3 py-3'>
+        <thead>
+          <tr>
+            <th>Guests search for "<%= @content %>"</th>
+            <th></th>
+          </tr>
+          <tr>
+            <th scope='col'>Check</th>
+            <th scope='col'>Guest Number</th>
+            <th scope='col'>Guest Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @records.each do |guest| %>
+          <tr>
+            <th scope='row'>
+              <span id='bookmarks_buttons_<%= guest.id %>'>
+              <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
+              <%= render 'bookmarks/bookmark-btn', guest: guest %>
+              </span>
+            </th>
+            <td>No.<%= guest.number %></td>
+            <td><%= link_to guest.name, guest_path(guest.id), class: 'text-link' %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-        <div class="mx-auto mt-4">
-          <%= paginate @records %>
-        </div>
+      <div class='mx-auto mt-4'>
+        <%= paginate @records %>
+      </div>
 
     </div>
   </div>
