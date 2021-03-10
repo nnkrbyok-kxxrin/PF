@@ -18,8 +18,8 @@
           <% @records.each do |guest| %>
           <tr>
             <th scope='row'>
+              <!--下記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
               <span id='bookmarks_buttons_<%= guest.id %>'>
-              <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
               <%= render 'bookmarks/bookmark-btn', guest: guest %>
               </span>
             </th>

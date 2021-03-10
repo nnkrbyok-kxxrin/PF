@@ -7,12 +7,14 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     @guest.admin_id = current_admin.id
+
+    # デフォルト値設定
     # if guest_params[:address] == ""
     #   @guest.address = "未記入"
     # end
-    # デフォルト値設定
     # 上記の記入は入力が空だった場合、DBに"未記入"と保存される
     # Viewでのif文記述であればDBにnilで保存される
+
     if @guest.save
         redirect_to guests_path
     else
@@ -29,23 +31,23 @@ class GuestsController < ApplicationController
     @tasks = Task.all
     @task = Task.find_by(params[:id])
 
+    # Postのページング・非同期実装のため、下記４行を追記
     respond_to do |format|
       format.html
       format.js
     end
-    # Postのページング機能・非同期実装のため、上記４行を追記
   end
 
   def show
     @guest = Guest.find(params[:id])
     @post = Post.new
+    # Postのページング機能実装のため、下記を追記
     @posts = @guest.posts.page(params[:page]).reverse_order.per(1)
-    # Postのページング機能実装のため、上記を追記
+    # Postのページング・非同期実装のため、下記４行を追記
     respond_to do |format|
       format.html
       format.js
     end
-    # Postのページング機能・非同期実装のため、上記４行を追記
   end
 
   def edit

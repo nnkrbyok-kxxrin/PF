@@ -5,7 +5,7 @@
         <div class='col-md-4'></div>
           <div class='col-lg-4'>
             <h1 class='h3 my-5 fw-normal'>Sign in</h1>
-              <!--%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>-->
+              <%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <!--上記のform_forを以下のform_withに変更-->
               <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
                 <%= render 'devise/shared/error_messages', resource: resource %>

@@ -16,7 +16,6 @@
         </div>
 
             <%= form_with model: @task_new, local: true, url: tasks_path(@task), method: :post do |f| %>
-            <!--%= form_with model: @task_new, url: tasks_path(@task), method: :post, class: 'form-control mb-3', local: true do |f| %>-->
       </div>
               <%= f.text_field :body, rows: '5',placeholder: '', class: 'form-control' %>
             <%= f.submit 'Try!', class: 'w-100 btn btn-secondary mt-2 mb-3' %>
@@ -35,8 +34,8 @@
           <% @guests.each do |guest| %>
           <tr>
             <th scope='row'>
+              <!--下記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
               <span id='bookmarks_buttons_<%= guest.id %>'>
-              <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
               <%= render 'bookmarks/bookmark-btn', guest: guest %>
               </span>
             </th>

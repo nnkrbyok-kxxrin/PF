@@ -1,5 +1,5 @@
-<div class='background text-font' id='pagenate-search'>
-<!--ページング非同期通信実装のため、上記記述id='pagenate-search'以外はsearch/search同様-->
+<!--ページング非同期通信実装のため、一番外側の記述以外はsearch/search同様-->
+<div class='background text-font'>
   <div class='container'>
     <div class='row'>
 
@@ -19,8 +19,8 @@
           <% @records.each do |guest| %>
           <tr>
             <th scope='row'>
+              <!--下記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
               <span id='bookmarks_buttons_<%= guest.id %>'>
-              <!--上記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
               <%= render 'bookmarks/bookmark-btn', guest: guest %>
               </span>
             </th>

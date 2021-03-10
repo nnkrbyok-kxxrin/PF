@@ -1,5 +1,4 @@
-<!--<div id='pagenate-post'>-->
-  <!--ページング非同期通信実装のため、一番外側の記述以外guests/show同様（上記不要）-->
+<!--ページング非同期通信実装のため、一番外側の記述以外はguests/show同様-->
   <div class='background text-font'>
     <div class='container'>
       <div class='row py-5'>
@@ -130,8 +129,8 @@
             <%= paginate @posts, remote: true %>
           </div>
 
+          <p id="scroll-top"><a href="#wrap">Page Top</a></p>
+
       </div>
     </div>
   </div>
-<!--</div>-->
-<!--ページング非同期通信実装のため、一番外側の記述以外guests/show同様（上記不要）-->

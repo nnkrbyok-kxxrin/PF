@@ -2,5 +2,6 @@
   <%= f.text_field :content, class: 'search-form-in mr-1' %>
   <%= f.select :model, options_for_select({ 'Number' => 'number', 'Name' => 'name' }), {}, { class: 'form-select search-select mr-1' } %>
   <%= f.select :method, options_for_select({ 'Perfect' => 'perfect', 'Forward' => 'forward', 'Backward' => 'backward', 'Partial' => 'partial' }), {}, { class: 'form-select search-select mr-1' } %>
+  <%= f.select :keyword, options_for_select({ 'New' => 'new', 'Old' => 'old', 'Many' => 'many', 'Few' => 'few' }), {}, { class: 'form-select search-select mr-1' } %>
   <%= f.submit 'Search', class: 'btn btn-outline-secondary' %>
 <% end %>

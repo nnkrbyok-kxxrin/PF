@@ -1,25 +1,32 @@
 class SearchController < ApplicationController
 
   def search
-  	# @guests = Guest.all
-    # ページング機能実装のため、上記を下記に変更
-    # @guests = Guest.page(params[:page]).reverse_order
-    # 12,14行目から情報を引き出し、引き出す記述にページネーションの記述を足したため上記の記述は不要
-		@model = params[:model]
 		@content = params[:content]
+		@model = params[:model]
 		@method = params[:method]
+
 		if @model == 'number'
-			 @records = Guest.number_search_for(@content, @method).page(params[:page]).reverse_order
+			 @records = Guest.number_search_for(@content, @method)
 		elsif @model == 'name'
-					@records = Guest.name_search_for(@content, @method).page(params[:page]).reverse_order
+		      @records = Guest.name_search_for(@content, @method)
+		else
+		  # 入力が空文字の場合
+      @records = Guest.all
 		end
 
+    @records = @records.sort_by_params(params[:keyword])
+
+    #ページング機能実装のため、1=>2=>3=>から下記に変更
+    #1.@guests = Guest.all
+    #2.@guests = Guest.page(params[:page]).reverse_order
+    #3.@records = Guest.number_search_for(@content, @method).page(params[:page]).reverse_order
+		@records = @records.page(params[:page])
+
+    # Postのページング・非同期実装のため、下記４行を追記
 		respond_to do |format|
       format.html
       format.js
     end
-    # Postのページング機能・非同期実装のため、上記４行を追記
-
   end
 
 end
