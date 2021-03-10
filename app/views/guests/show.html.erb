@@ -84,10 +84,10 @@
                   <td></td>
                   <td class='text-md-right'><% if @guest.admin == current_admin %>
                         <%= link_to edit_guest_path(@guest) do %>
-                          <i class='fas fa-edit fa-2x icon-link'></i>
+                          <span class='fas fa-edit fa-2x icon-link'></span>
                         <% end %>｜
                         <%= link_to guest_path(@guest), method: :delete do %>
-                          <i class='fas fa-trash-alt fa-2x icon-link pr-1'></i>
+                          <span class='fas fa-trash-alt fa-2x icon-link pr-1'></span>
                         <% end %>
                     <% end %>
                   </td>
@@ -111,7 +111,7 @@
               <%= write.created_at.strftime('%Y/%m/%d') %>｜
                 <% if write.admin == current_admin %>
                   <%= link_to guest_post_path(write.guest,write), method: :delete do %>
-                    <i class='fas fa-trash-alt fa-lg icon-link mb-3'></i>
+                    <span class='fas fa-trash-alt fa-lg icon-link mb-3'></span>
                   <% end %>
                 <% end %>
               <!--下記の記述の:fill, 40, 40（画像縮小）は読み込みが重くなる＋サイズ指定と重複するため不要-->

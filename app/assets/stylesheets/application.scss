@@ -88,6 +88,12 @@ footer{
   color: gray;
 }
 
+// 文字下線
+.under {
+  // text-decoration : underline;
+  background: linear-gradient(transparent 50%, #CCFFFF 50%);
+}
+
 // アイコンリンク
 .icon-link{
   text-decoration: none;
@@ -140,6 +146,29 @@ footer{
 
 // aboutリンク
 .about-link{
+  color: #FF82B2;
+}
+
+// aboutページ
+.about-box{
+  height: 60vh;
+}
+
+.about-message{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.about-title{
+  color: #666666;
+}
+
+.about-body{
+  line-height: 1.5;
+}
+
+.about-text{
   color: #FF82B2;
 }
 

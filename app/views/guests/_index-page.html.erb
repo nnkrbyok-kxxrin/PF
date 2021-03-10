@@ -5,12 +5,12 @@
 
         <div class='table table-light task-table mt-5 px-3 py-3'>
           <div class='task mx-3 my-3'>
-            <h4><i class='fas fa-star-and-crescent'></i> <i class='fas fa-sun'></i> Only one <%= link_to 'go', about_path, class: 'about-link' %>al for today!</h4></br>
+            <h4><span class='fas fa-star-and-crescent'></span> <span class='fas fa-sun'></span> Only one <%= link_to 'go', about_path, class: 'about-link' %>al for today!</h4></br>
             <% @tasks.each do |task| %>
             <%= task.body %>
               <% if task.admin == current_admin %>
                 <%= link_to task_path(task,task), method: :delete do %>
-                <i class='fas fa-check-circle fa-lg icon-link'></i>
+                <span class='fas fa-check-circle fa-lg icon-link'></span>
                 <% end %>
               <% end %>
             <% end %>
