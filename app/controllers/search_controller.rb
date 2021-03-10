@@ -13,7 +13,8 @@ class SearchController < ApplicationController
 		  # 入力が空文字の場合
       @records = Guest.all
 		end
-
+    
+    # 並び替え実装
     @records = @records.sort_by_params(params[:keyword])
 
     #ページング機能実装のため、1=>2=>3=>から下記に変更

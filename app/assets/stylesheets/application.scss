@@ -213,25 +213,3 @@ width: 100%;
 max-width: 100%;
 height: auto;
 }
-
-//スクロールボタン
-.scroll-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 77%;
-}
-.scroll-top a {
-    background: #666;
-    text-decoration: none;
-    color: #fff;
-    width: 100px;
-    padding: 30px 0;
-    text-align: center;
-    display: block;
-    border-radius: 5px;
-}
-.scroll-top a:hover {
-    text-decoration: none;
-    background: #999;
-}
