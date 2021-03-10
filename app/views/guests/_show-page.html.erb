@@ -99,7 +99,7 @@
 
               <div class='new-post'>
                 <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
-                  <%= f.text_area :infomation, rows: '3', placeholder: '', class: 'form-control mb-3' %>
+                  <%= f.text_area :infomation, rows: '7', placeholder: '', class: 'form-control mb-3' %>
                   <%= f.attachment_field :image, class: 'mb-3' %></br>
                   <%= f.submit 'add to', class: 'btn btn-secondary mb-5' %>
                 <% end %>
@@ -107,7 +107,7 @@
             </div>
           </div>
 
-          <div class='col-md-6 mt-5 py-5 px-5 h-75 box-background'>
+          <div class='col-md-6 mt-5 py-5 px-5 box-background'>
             <div class='posts'>
               <% @posts.each do |write| %>
                 <%= write.created_at.strftime('%Y/%m/%d') %>｜
@@ -126,7 +126,7 @@
             </div>
           </div>
 
-          <div class='mx-auto'>
+          <div class='mx-auto mt-5'>
             <%= paginate @posts, remote: true %>
           </div>
 

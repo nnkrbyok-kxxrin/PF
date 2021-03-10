@@ -28,6 +28,12 @@ class GuestsController < ApplicationController
     @task_new = Task.new
     @tasks = Task.all
     @task = Task.find_by(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    # Postのページング機能・非同期実装のため、上記４行を追記
   end
 
   def show
