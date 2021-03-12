@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_130416) do
+ActiveRecord::Schema.define(version: 2021_03_12_140537) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 2021_03_01_130416) do
   create_table "bookmarks", force: :cascade do |t|
     t.integer "admin_id"
     t.integer "guest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.boolean "disp_flg"
+    t.datetime "start"
+    t.datetime "end"
+    t.string "allday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,6 +65,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_130416) do
     t.text "infomation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rate"
   end
 
   create_table "tasks", force: :cascade do |t|

@@ -78,3 +78,6 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
