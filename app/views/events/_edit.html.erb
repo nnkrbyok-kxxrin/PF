@@ -1,0 +1,34 @@
+<% events.each do |event| %>
+  <div id='inputScheduleEditForm<%= event.id %>' class='modal fade' tabindex='-1'>
+    <div class='modal-dialog modal-nm'>
+      <div class='modal-content'>
+        <div class='modal-header'>
+          <h4 class='modal-title'>スケジュール編集</h4>
+        </div>
+        <div class='modal-body'>
+          <div  class='col'>
+            <%= form_with(model: event, url: users_event_path(event), method: :put) do |f| %>
+              <p>
+                <span>タイトル</span>
+                <span id='inputTitle' value=''><%= f.text_field :title, class: 'form-control', placeholder: 'タイトルを入力してください' %></span>
+              </p>
+              <span>開始日時</span>
+              <span><%= f.datetime_field  :start, placeholder: 'XXXX-XX-XX', class: 'field' %> ~ </span><br>
+              <span>終了日時</span>
+              <span><%= f.datetime_field  :end, placeholder: 'XXXX-XX-XX', class: 'field' %></span>
+              <span><br>
+                  詳細
+                  <%= f.text_field :body, class: 'form-control', placeholder: 'タイトルの詳細を記入してください' %>
+              </span>
+              <div class='modal-footer'>
+                <%= f.hidden_field :admin_id, :value => current_admin.id %>
+                <%= f.submit '編集する', class: 'btn btn-primary' %>
+                <button type='button' class='btn btn-default' data-dismiss='modal'>閉じる</button>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -19,11 +19,11 @@
       <link rel='preconnect' href='https://fonts.gstatic.com'>
       <link href='https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Noto+Sans+JP:wght@500&display=swap' rel='stylesheet'>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 
       <!--Gem FullCalender-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css">
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css'>
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css'>
   </head>
 
   <body>
@@ -45,10 +45,13 @@
                       <%= link_to 'Home', guests_path, class: 'nav-link' %>
                     </li>
                     <li class='nav-item'>
-                      <%= link_to 'Sign-out', destroy_admin_session_path, method: :delete, class: 'nav-link' %>
+                      <%= link_to 'Schedule', events_path, class: 'nav-link' %>
                     </li>
                     <li class='nav-item'>
                       <%= link_to 'New', new_guest_path, method: :get, class: 'nav-link' %>
+                    </li>
+                    <li class='nav-item'>
+                      <%= link_to 'Sign-out', destroy_admin_session_path, method: :delete, class: 'nav-link' %>
                     </li>
                   <% else %>
                     <li class='nav-item'>
