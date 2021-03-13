@@ -7,8 +7,14 @@ class PostsController < ApplicationController
     # 上記と下記は同じ意味
     write = current_admin.posts.new(post_params)
     write.guest_id = guest.id
-    write.save
-    redirect_to guest_path(guest.id)
+    if write.save
+       redirect_to guest_path(guest.id)
+    else
+       @guest = guest
+       @post = write
+       @posts = @guest.posts.page(params[:page]).reverse_order.per(1)
+       render 'guests/show'
+    end
   end
 
   def destroy
@@ -19,7 +25,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:admin_id, :guest_id, :image, :infomation)
+    params.require(:post).permit(:admin_id, :guest_id, :image, :infomation, :rate)
   end
 
 end

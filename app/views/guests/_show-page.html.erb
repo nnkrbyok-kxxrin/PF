@@ -96,10 +96,35 @@
                 </tbody>
               </table>
 
+            <% if @post.errors.any? %>
+              <div>
+                <ul style='errors-message'>
+                  <% @post.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
               <div class='new-post'>
                 <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
                   <%= f.text_area :infomation, rows: '7', placeholder: '', class: 'form-control mb-3' %>
                   <%= f.attachment_field :image, class: 'mb-3' %></br>
+                  <div class='form-group row ml-1' id='star'>
+                    <%= f.hidden_field :rate, id: :review_star %>
+                  </div>
+                  <!--以下、JavaScript-->
+                  <script>
+                  $('#star').raty({
+                    single : true,
+                    size     : 36,
+                    starOff:  '<%= asset_path('star-off.png') %>',
+                    starOn : '<%= asset_path('star-on.png') %>',
+                    starHalf: '<%= asset_path('star-half.png') %>',
+                    scoreName: 'post[rate]',
+                    half: true,
+                  });
+                  </script>
                   <%= f.submit 'add to', class: 'btn btn-secondary mb-5' %>
                 <% end %>
               </div>
@@ -118,8 +143,20 @@
                 <!--%= attachment_image_tag @post, :image, :fill, 40, 40, format: 'jpeg', fallback: "phonto.JPG", size: "300x300" %>-->
                 <!--上記の記述の:fill, 40, 40（画像縮小）は読み込みが重くなる＋サイズ指定と重複するため不要-->
                 <!--format: 'jpeg'も現時点で拡張子を指定して保存する必要がないため不要、下記記述に変更-->
-                <%= attachment_image_tag write, :image, fallback: 'phonto3.JPG', size: '480x640', class: 'mb-3' %>
-                <p class='mb-5'>
+                <%= attachment_image_tag write, :image, fallback: 'phonto3.JPG', size: '480x640', class: 'image-guest mb-3' %>
+                <div id='star-rate-<%= write.id %>'></div>
+                <script>
+                $('#star-rate-<%= write.id %>').raty({
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= write.rate %>,
+                });
+                </script>
+                <p class='mt-2 mb-5'>
                 <%= write.infomation %></p>
               <% end %>
             </div>
