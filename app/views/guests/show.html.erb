@@ -108,8 +108,9 @@
             <div class='new-post'>
               <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
                 <%= f.text_area :infomation, rows: '7', placeholder: '', class: 'form-control mb-3' %>
-                <%= f.attachment_field :image, class: 'mb-3' %></br>
-                <div class='form-group row ml-1' id='star'>
+                <%= f.attachment_field :image, class: 'text mb-3' %></br>
+                <span class='text'>What is the smile of the guest?</span>
+                <div class='form-group row mt-2 ml-1' id='star'>
                   <%= f.hidden_field :rate, id: :review_star %>
                 </div>
                 <!--以下、JavaScript-->
