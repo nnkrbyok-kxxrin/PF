@@ -1,3 +1,4 @@
+<h3 class="text-center">Schedule</h3>
 <div id='calendar'></div>
   <% if admin_signed_in? %>
     <% if @admin.id == current_admin.id %>
@@ -8,7 +9,7 @@
               <h4 class='modal-title'>スケジュール登録</h4>
             </div>
               <div class='modal-body'>
-                <%= form_with model: @event, url: events_path do |f| %>
+                <%= form_with model: @event, url: events_path, method: :post do |f| %>
                   <div  class='col'>
                     <p>
                     <span>タイトル</span>
@@ -37,7 +38,7 @@
       </div>
     <% end %>
   <% end %>
-  
+
   <script>
     // CRUDを行う際にCSRF対策のtokenを発行
         $(document).ready(function() {
@@ -65,9 +66,9 @@
                   prev: "<",
                   next: ">"
             },
-            
+
             timezone: 'UTC',
-            events: '/users/events.json',
+            events: '/events.json',
             navLinks: true,
             selectable: true,
             selectHelper: true,

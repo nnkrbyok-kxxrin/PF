@@ -7,7 +7,7 @@
         </div>
         <div class='modal-body'>
           <div  class='col'>
-            <%= form_with(model: event, url: users_event_path(event), method: :put) do |f| %>
+            <%= form_with(model: event, url: event_path(event), method: :put) do |f| %>
               <p>
                 <span>タイトル</span>
                 <span id='inputTitle' value=''><%= f.text_field :title, class: 'form-control', placeholder: 'タイトルを入力してください' %></span>
@@ -22,7 +22,7 @@
               </span>
               <div class='modal-footer'>
                 <%= f.hidden_field :admin_id, :value => current_admin.id %>
-                <%= f.submit '編集する', class: 'btn btn-primary' %>
+                <%= f.submit '編集', class: 'btn btn-primary' %>
                 <button type='button' class='btn btn-default' data-dismiss='modal'>閉じる</button>
               </div>
             <% end %>

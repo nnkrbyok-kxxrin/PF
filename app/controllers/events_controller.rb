@@ -4,6 +4,11 @@ class EventsController < ApplicationController
       @event = Event.new
       @events = Event.all
       @admin = Admin.find_by(params[:id])
+
+      respond_to do |format|
+        format.html
+        format.json { render json: @events }
+      end
     end
 
     def create
