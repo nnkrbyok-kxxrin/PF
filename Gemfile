@@ -83,3 +83,6 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
 gem 'simple_calendar', '~> 2.0'
+
+gem 'rubocop', require: false
+gem 'rubocop-rails'
