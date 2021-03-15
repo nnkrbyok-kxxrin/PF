@@ -81,3 +81,5 @@ end
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+gem 'simple_calendar', '~> 2.0'

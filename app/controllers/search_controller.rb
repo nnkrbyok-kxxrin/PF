@@ -5,13 +5,15 @@ class SearchController < ApplicationController
 		@model = params[:model]
 		@method = params[:method]
 
-		if @model == 'number'
-			 @records = Guest.number_search_for(@content, @method)
-		elsif @model == 'name'
-		      @records = Guest.name_search_for(@content, @method)
-		else
+		if
 		  # 入力が空文字の場合
-      @records = Guest.all
+		  @records = Guest.all
+		elsif
+		  @model == 'number'
+			@records = Guest.number_search_for(@content, @method)
+		elsif
+			@model == 'name'
+			@records = Guest.name_search_for(@content, @method)
 		end
 
     # 並び替え実装
