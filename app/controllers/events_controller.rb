@@ -3,9 +3,8 @@ class EventsController < ApplicationController
   # 以下はsimple_calendar用の記述
 
   def index
-    @event_new = Event.new
+    @event = Event.new
     @events = Event.all
-    @event = Event.find_by(params[:id])
   end
 
   def create
@@ -16,6 +15,12 @@ class EventsController < ApplicationController
     else
        render :index
     end
+  end
+
+  def show
+  end
+
+  def edit
   end
 
   def update
@@ -36,7 +41,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :body, :start, :end, :admin_id)
+    params.require(:event).permit(:title, :body, :start_time, :admin_id)
   end
 
     # 以下はfullcalendar用の記述

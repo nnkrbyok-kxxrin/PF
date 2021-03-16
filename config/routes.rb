@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "/about" => "homes#about"
 
   resources :tasks, only:[:create, :destroy]
-  resources :events, only:[:index, :create, :update, :destroy]
+  resources :events, only:[:index, :show, :edit, :create, :update, :destroy]
 
   resources :guests do
     resources :posts, only:[:create, :destroy]

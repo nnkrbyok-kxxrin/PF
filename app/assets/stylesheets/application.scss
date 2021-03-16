@@ -128,19 +128,6 @@ footer{
     padding: 5px;
 }
 
-// 今日の目標(お客様一覧ページ)
-.task-table{
-  border: 1px solid;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 6px;
-  border-color: gray;
-}
-
-.task{
-  color: gray;
-}
-
 // aboutリンク
 .about-link{
   color: #FF82B2;
@@ -167,6 +154,30 @@ footer{
 
 .about-text{
   color: #FF82B2;
+}
+
+// カレンダー
+.calendar-color{
+  color: gray;
+  background-color: white;
+  border: 1px solid;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 6px;
+  border-color: gray;
+}
+
+// 今日の目標(お客様一覧ページ)
+.task-table{
+  border: 1px solid;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 6px;
+  border-color: gray;
+}
+
+.task{
+  color: gray;
 }
 
 // ブックマーク（いいね）
