@@ -2,12 +2,13 @@ Rails.application.routes.draw do
 
   devise_for :admins
 
-  root to: "homes#top"
+  root to: 'homes#top'
 
   # get 'search/search'
   # 上記のデフォルトの記述を以下に変更
-  get "/search" => "search#search"
-  get "/about" => "homes#about"
+  get '/search' => 'search#search'
+  get '/about' => 'homes#about'
+  get '/info' => 'homes#info'
 
   resources :tasks, only:[:create, :destroy]
   resources :events, only:[:index, :show, :create, :update, :destroy]

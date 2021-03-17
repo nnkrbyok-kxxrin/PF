@@ -1,48 +1,67 @@
 <!--以下はsimple_calendar用の記述-->
 
 <div class='background text-font'>
+  <div class='container'>
+    <div class='row py-5'>
 
+      <div class='col-md-1'></div>
 
-<p>
-  <strong>タイトル</strong>
-  <%= @event.title %>
-</p>
+      <div class='col-md-10 py-4 box-background'>
 
-<p>
-  <strong>時間</strong>
-  <%#= @event.start_time %>
-  <%#= @event.start_time.strftime("%Y-%m-%d %H:%M") %>
-  <%= l @event.created_at, format: :short %>
-  <%#= l @event.start_time created_at, format: :short %>
-</p>
+        <%= link_to events_path, class: 'fas fa-angle-double-left fa-2x icon-link mb-2', local: true do %>
+        <% end %>
 
-<p>
-  <strong>内容</strong>
-  <%= @event.body %>
-</p>
+          <% if @event.errors.any? %>
+          <div>
+            <ul style='errors-message'>
+              <% @event.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
 
-<%= link_to 'Back', events_path %>
+          <table class="table table-borderless table-light table-customize mt-3">
+            <tbody>
+              <tr>
+                <th scope="row">Start Time</th>
+                <td><%= @event.created_at.strftime('%Y/%m/%d/%H:%M') %></td>
+                <td><%= @event.updated_at.strftime('%Y/%m/%d/%H:%M') %></td>
+              </tr>
+              <tr>
+                <th scope="row">Title</th>
+                <td><%= @event.title %></td>
+              </tr>
+              <tr>
+                <th scope="row">Contents</th>
+                <td><%= @event.body %></td>
+              </tr>
+            </tbody>
+          </table>
 
+        <% if @event.admin == current_admin %>
+          <%= form_with model: @event, local:true do |f| %>
+          <div class='my-3'>
+            <label for='formGroupExampleInput' class='form-label'>Title</label>
+            <%= f.text_field :title, autofocus: true, id:'inputTitle', placeholder: '', class: 'form-control mb-3' %>
+          </div>
+          <div class='mb-3'>
+            <label for='formGroupExampleInput2' class='form-label'>Contents</label>
+            <%= f.text_field :body, autofocus: true, id:'inputContents', placeholder: '', class: 'form-control mb-3' %>
+          </div>
+          <div class='mb-3'>
+            <label for='formGroupExampleInput2' class='form-label'>Start Time</label>
+            <%= f.datetime_select :start_time, autofocus: true, id:'inputStart-Time', placeholder: '', class: 'form-control mb-3' %>
+          </div>
+          <%= f.submit 'Update!', class: 'w-100 btn btn-secondary' %>
+            <%= link_to event_path(@event), method: :delete do %>
+              <%= f.submit 'Delete!', class: 'w-100 btn btn-outline-secondary mt-2' %>
+            <% end %>
+          <% end %>
+        <% end %>
 
+      </div>
 
-
-  <%= form_with model: @event, local: true do |form| %>
-
-    <div class="title">
-      <%= form.label :title %>
-      <%= form.text_field :title %>
     </div>
-    <div class="body">
-      <%= form.label :body %>
-      <%= form.text_field :body %>
-    </div>
-    <div class="time">
-      <%= form.label :start_time %>
-      <%= form.datetime_select :start_time %>
-    </div>
-    <div class="submit">
-      <%= form.submit %>
-    </div>
-  <% end %>
-
+  </div>
 </div>
