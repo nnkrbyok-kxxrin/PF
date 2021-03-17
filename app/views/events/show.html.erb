@@ -1,0 +1,48 @@
+<!--以下はsimple_calendar用の記述-->
+
+<div class='background text-font'>
+
+
+<p>
+  <strong>タイトル</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>時間</strong>
+  <%#= @event.start_time %>
+  <%#= @event.start_time.strftime("%Y-%m-%d %H:%M") %>
+  <%= l @event.created_at, format: :short %>
+  <%#= l @event.start_time created_at, format: :short %>
+</p>
+
+<p>
+  <strong>内容</strong>
+  <%= @event.body %>
+</p>
+
+<%= link_to 'Back', events_path %>
+
+
+
+
+  <%= form_with model: @event, local: true do |form| %>
+
+    <div class="title">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div class="body">
+      <%= form.label :body %>
+      <%= form.text_field :body %>
+    </div>
+    <div class="time">
+      <%= form.label :start_time %>
+      <%= form.datetime_select :start_time %>
+    </div>
+    <div class="submit">
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+</div>

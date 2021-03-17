@@ -16,3 +16,11 @@ Documentation:
 # モジュール名::クラス名の定義を許可
 ClassAndModuleChildren:
   Enabled: false
+
+# ネストが深すぎる
+BlockNesting:
+  Max: 5
+
+# 行が長すぎる
+LineLength:
+  Enabled: false

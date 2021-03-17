@@ -2,17 +2,15 @@
 
 <div class='background text-font'>
 
-  <%= form_with(model: @event, local: true) do |form| %>
+  <%= form_with model: @event, local: true do |form| %>
+
     <div class="title">
-      <%= form.label :title %>
       <%= form.text_field :title %>
     </div>
     <div class="body">
-      <%= form.label :body %>
       <%= form.text_field :body %>
     </div>
     <div class="time">
-      <%= form.label :start_time %>
       <%= form.datetime_select :start_time %>
     </div>
     <div class="submit">
