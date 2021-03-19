@@ -38,6 +38,7 @@ class GuestsController < ApplicationController
 
   def show
     @guest = Guest.find(params[:id])
+    
     @post = Post.new
     # Postのページング機能実装のため、下記を追記
     @posts = @guest.posts.page(params[:page]).reverse_order.per(1)
