@@ -60,7 +60,6 @@ class GuestsController < ApplicationController
     else
         render :edit
     end
-
   end
 
   def destroy

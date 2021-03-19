@@ -21,18 +21,18 @@
           </div>
           <% end %>
 
-          <table class="table table-borderless table-light table-customize mt-3">
+          <table class='table table-borderless table-light table-customize mt-3'>
             <tbody>
               <tr>
-                <th scope="row">Time</th>
+                <th scope='row'>Time</th>
                 <td><%= @event.start_time.strftime('%Y/%m/%d/%H:%M') %></td>
               </tr>
               <tr>
-                <th scope="row">Title</th>
+                <th scope='row'>Title</th>
                 <td><%= @event.title %></td>
               </tr>
               <tr>
-                <th scope="row">Contents</th>
+                <th scope='row'>Contents</th>
                 <td><%= @event.body %></td>
               </tr>
             </tbody>
