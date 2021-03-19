@@ -1,4 +1,4 @@
-# Thanks Collection  
+# Thanks Collection
   
 ## サイト概要  
 顧客情報管理ツール（簡易カルテ）  
@@ -34,11 +34,11 @@
 個人オーナー（主に女性）  
 例：個人美容サロンのサロンオーナー  
     副業や内職などで個人で活動するアクセサリークリエイターなど  
-  
+      
 ### 主な利用シーン  
   
 例：アイラッシュエクステンション個人サロン　サロンオーナー（アイデザイナー）の場合  
-  
+      
 　　コンプレックス産業のアイラッシュエクステンション。  
 　　お客様のお悩みを解消し、要望を叶え、更なるお客様の魅力を引き出す‥  
 　　いつも感動の技術・接客を提供し続けるには欠かせない顧客管理！  
@@ -50,7 +50,6 @@
 　　それだと大事な顧客情報を100%書き留めておくことは難しいかも‥？  
 　　  
 　　そんな時‥‥！！  
-　　  
 　　施術工程の合間にパパッ！と記入出来る電子簡易カルテがあれば便利！  
 　　  
 　　ご来店ごとにお客様の情報を細かく記入。  
@@ -63,7 +62,7 @@
 　　  
 ## 設計書  
 ER図：<img src="https://github.com/nnkrbyok-kxxrin/PF/files/6068173/Untitled.Diagram.pdf" width="320px">  
-テーブル定義書：https://docs.google.com/spreadsheets/d/1GMF8UBl32sjD90BU9ehY0gPHIcK-i6RJ/edit#gid=1243549839  
+テーブル定義書：https://docs.google.com/spreadsheets/d/1GMF8UBl32sjD90BU9ehY0gPHIcK-i6RJ/edit#gid=1243549839 
 詳細設計書：https://docs.google.com/spreadsheets/d/1KUBlmVuWgmrHWjXbKxLZC28kP2SSsFmuDWF3ndUcz8U/edit#gid=1850781366  
   
 ## チャレンジ要素一覧：  
@@ -78,5 +77,9 @@ https://docs.google.com/spreadsheets/d/17AZma3zC_Gj3DHHYpm3wZDIpFbjMoDgO7TZNrxL4
 -   
 ## 使用素材  
 -外部サービスの画像素材・音声素材を使用した場合  
-サービス名：  
-URL：  
+サービス名：GoogleFonts  
+URL：https://fonts.google.com/  
+サービス名：O-DAN  
+URL：https://o-dan.net/ja/  
+サービス名：お名前.com  
+URL：https://www.onamae.com/  
