@@ -4,7 +4,9 @@ class EventsController < ApplicationController
 
   def index
     @event = Event.new
-    @events = Event.all
+    # @events = Event.all
+    # ログインしている人に基づくものしか表示させないため、上記を下記に変更
+    @event = current_admin.events.all
   end
 
   def create
@@ -19,11 +21,15 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    # @event = Event.find(params[:id])
+    # ログインしている人に基づくものしか表示させないため、上記を下記に変更
+    @event = current_admin.events.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
+    # @event = Event.find(params[:id])
+    # ログインしている人に基づくものしか表示させないため、上記を下記に変更
+    @event = current_admin.events.find(params[:id])
     if @event.update(event_params)
        redirect_to events_path
     else
@@ -33,7 +39,9 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    # @event = Event.find(params[:id])
+    # ログインしている人に基づくものしか表示させないため、上記を下記に変更
+    @event = current_admin.events.find(params[:id])
     @event.destroy
     redirect_to events_path
   end

@@ -8,7 +8,9 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
+    # @task = Task.find(params[:id])
+    # ログインしている人に基づくものしか表示させないため、上記を下記に変更
+    @task = current_admin.tasks.find(params[:id])
     @task.destroy
     redirect_to guests_path
   end
