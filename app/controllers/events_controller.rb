@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     @event = Event.new
     # @events = Event.all
     # ログインしている人に基づくものしか表示させないため、上記を下記に変更
-    @event = current_admin.events.all
+    @events = current_admin.events.all
   end
 
   def create
@@ -14,8 +14,7 @@ class EventsController < ApplicationController
     @event.admin_id = current_admin.id
     if @event.save
        redirect_to events_path
-    else
-       @events = Event.all
+    else @events = current_admin.events.all
        render :index
     end
   end
