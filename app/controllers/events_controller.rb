@@ -14,7 +14,10 @@ class EventsController < ApplicationController
     @event.admin_id = current_admin.id
     if @event.save
        redirect_to events_path
-    else @events = current_admin.events.all
+    else 
+      # @events = Event.all
+      # ログインしている人に基づくものしか表示させないため、上記を下記に変更
+       @events = current_admin.events.all
        render :index
     end
   end
@@ -31,9 +34,8 @@ class EventsController < ApplicationController
     @event = current_admin.events.find(params[:id])
     if @event.update(event_params)
        redirect_to events_path
-    else
-       @event.update(event_params)
-       render :show
+    else @event.update(event_params)
+         render :show
     end
   end
 

@@ -9,11 +9,10 @@ class PostsController < ApplicationController
     write.guest_id = guest.id
     if write.save
        redirect_to guest_path(guest.id)
-    else
-       @guest = guest
-       @post = write
-       @posts = @guest.posts.page(params[:page]).reverse_order.per(1)
-       render 'guests/show'
+    else @guest = guest
+         @post = write
+         @posts = @guest.posts.page(params[:page]).reverse_order.per(1)
+         render 'guests/show'
     end
   end
 
