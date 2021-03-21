@@ -1,5 +1,5 @@
 <div class='background text-font'>
-  <body class='text-center'>
+  <div class='text-center'>
     <div class='container'>
       <div class='row pt-5'>
         <div class='col-md-4'></div>
@@ -11,7 +11,7 @@
                 <%= render 'devise/shared/error_messages', resource: resource %>
 
                 <div class='visually-hidden'>
-                  <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: 'E-mail', required: '', autofocus: '' %>
+                  <%= f.email_field :email, autocomplete: 'email', class: 'form-control', placeholder: 'E-mail', required: '' %>
                 </div>
 
                 <div class='visually-hidden'>
@@ -31,5 +31,5 @@
         <div class='col-md-4'></div>
       </div>
     </div>
-  </body>
+  </div>
 </div>
