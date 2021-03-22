@@ -5,7 +5,7 @@
     <%= link_to t('simple_calendar.next', default: '▶︎'), calendar.url_for_next_view, class: 'text-link' %>
   </div>
 
-  <table class='table table-striped calendar-color'>
+  <table class='table-striped calendar-color'>
     <thead>
       <tr>
         <% date_range.slice(0, 7).each do |day| %>

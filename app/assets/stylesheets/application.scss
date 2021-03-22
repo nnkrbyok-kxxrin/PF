@@ -19,7 +19,6 @@
 @import 'font-awesome';
 
 
-
 // 背景画像関係
 .wrapper {
   // 1画面に収める
@@ -123,14 +122,26 @@ footer{
 }
 
 .search-select{
-    box-sizing: border-box;
-    color: gray;
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    border-radius: 5px;
-    padding: 5px;
+  box-sizing: border-box;
+  color: gray;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.search-btn{
+  border: 1px solid;
+  background-color: white;
+  color: gray;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 5px;
+  padding: 0.365rem 0.65rem;
 }
 
 // aboutリンク
@@ -138,26 +149,26 @@ footer{
   color: #FF82B2;
 }
 
-// aboutページ
-.about-box{
-  height: 60vh;
-}
+// about,infoページ
+// .message-box{
+//   height: 60vh;
+// }
 
-.about-message{
+.message-overall{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
 
-.about-title{
+.message-title{
   color: #666666;
 }
 
-.about-body{
+.message-body{
   line-height: 1.5;
 }
 
-.about-text{
+.message-text{
   color: #FF82B2;
 }
 
