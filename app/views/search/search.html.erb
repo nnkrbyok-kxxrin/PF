@@ -31,7 +31,7 @@
       </table>
 
       <div class='mx-auto mt-4'>
-        <%= paginate @records, remote: true %>
+        <%= paginate @records, window: 2, remote: true %>
       </div>
 
     </div>

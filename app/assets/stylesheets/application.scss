@@ -215,6 +215,16 @@ footer{
   color: gray;
 }
 
+@media screen and (max-width:480px) {
+// 画面サイズが480pxまでの幅の場合に適応される
+  .page-link{
+    color: gray;
+    padding-top: 0.2rem;
+    padding-right: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.2rem;
+}}
+
 // エラーメッセージ（Post）
 .errors-message-post{
   color: #444444;
