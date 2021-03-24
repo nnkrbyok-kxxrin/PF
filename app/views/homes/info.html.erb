@@ -4,8 +4,8 @@
       <div class='col-md-1'></div>
       <div class='mx-auto box-background message-box col-md-10 my-5'>
         <div class='message-overall py-5 px-5'>
-          <h1 class='about-title'>Information</h1></br>
-          <h5 class='message-body'>
+          <h1 class='message-title'>Information</h1></br>
+          <h5 class='message-body message-font-size'>
             当サイトはお客様情報管理・簡易カルテとしてご利用いただけます。</br>
             覚えておきたいお客様とのやりとりや、</br>
             記録しておきたい事柄を画像やスマイル度付きで投稿可能！</br>
@@ -14,7 +14,9 @@
             全ての登録ゲストをご確認いただく場合は</br>
             検索フォーム未入力のまま並び替え機能のみをご使用ください。</br>
             一日の始まりにHomeにて今日の目標や心構えを必ずひとつ投稿し、</br>
-            一日の終わりに振り返り</br>
+            一日の終わりに振り返り
+          <%= link_to about_path, class: 'fas fa-angle-double-left fa-2x icon-link icon-link-about mt-3', local: true do %>
+          <% end %>
           </h5>
         </div>
       </div>
