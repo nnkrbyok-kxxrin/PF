@@ -10,5 +10,6 @@ class Admin < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :events, dependent: :destroy
+  has_many :tags, dependent: :destroy
 
 end

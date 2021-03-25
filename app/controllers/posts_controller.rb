@@ -8,6 +8,10 @@ class PostsController < ApplicationController
     write = current_admin.posts.new(post_params)
     write.guest_id = guest.id
     if write.save
+      # タグ機能追加
+      # ex:　['tag1,tag2,tag3'] => ['tag1', 'tag2', 'tag3']
+       tag_list = params[:post][:tag_name].split(',')
+       write.save_tags(tag_list)
        redirect_to guest_path(guest.id)
     else @guest = guest
          @post = write

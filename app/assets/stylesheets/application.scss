@@ -20,10 +20,6 @@
 
 
 
-
-
-
-
 // 背景画像関係
 .wrapper {
   // 1画面に収める
@@ -58,6 +54,19 @@
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 6px;
+
+// @media screen and (max-width:480px) {
+// // // 画面サイズが480pxまでの幅の場合に適応される
+// .box-background{
+//   background-color: white;
+//   border-color: gray;
+//   color: gray;
+
+//   border: 1px solid;
+//   border-collapse: separate;
+//   border-spacing: 0;
+//   border-radius: 6px;
+//   }}
 }
 
 // フッター
