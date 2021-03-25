@@ -53,12 +53,10 @@
   
 ### ターゲットユーザー  
 個人オーナー（主に女性）  
-例：個人美容サロンのサロンオーナー  
-    副業や内職などで個人で活動するアクセサリークリエイターなど  
   
-    主に個人美容サロンのサロンオーナーをイメージしておりますが、  
-    使用方法によっては副業や内職などの  
-    個人で活動するアクセサリークリエイターなどの方にも使用していただけるかと思います。  
+主に個人美容サロンのサロンオーナーをイメージしておりますが、  
+使用方法によっては副業や内職などの  
+個人で活動するアクセサリークリエイターなどの方にも使用していただけるかと思います。  
   
 ### 主な利用シーン  
   
@@ -87,7 +85,7 @@
 　　大切な顧客情報をしっかりと記録して、お客様からの「ありがとう」を集めましょう！！  
   
 ## 設計書  
-ER図：<img src="https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6207190/Untitled.Diagram.pdf" width="320px">  
+ER図：<img src="https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6207922/Untitled.Diagram.pdf" width="320px">  
 テーブル定義書：https://docs.google.com/spreadsheets/d/1GMF8UBl32sjD90BU9ehY0gPHIcK-i6RJ/edit#gid=1243549839  
 詳細設計書：https://docs.google.com/spreadsheets/d/1KUBlmVuWgmrHWjXbKxLZC28kP2SSsFmuDWF3ndUcz8U/edit#gid=1850781366  
   
