@@ -14,7 +14,7 @@ class Post < ApplicationRecord
     less_than_or_equal_to: 5,
     greater_than_or_equal_to: 1
   }, presence: true
-  
+
   # タグ機能
   def save_tags(savepost_tags)
     # unless..既にこのpost(self)がtagsを持っていたら、self.tags.pl..そのtagsの中のtag_nameというものだけをcurrent_tagsの中に入れる
@@ -23,13 +23,13 @@ class Post < ApplicationRecord
     old_tags = current_tags - savepost_tags
     # 新しいcurrent_tagsから古いsavepost_tagsを引いたもの
     new_tags = savepost_tags - current_tags
-    
+
     # 作成
     new_tags.each do |new_name|
       tag = Tag.find_or_create_by(tag_name: new_name)
       self.tags << tag
     end
-    
+
     # 削除
     old_tags.each do |old_name|
       self.tags.delete Tag.find_by(tag_name: old_name)

@@ -1,9 +1,8 @@
 <%= form_with url: search_path, method: :get, class: 'flex-{sm,mdlg,xl}-row-reverse', type: 'search', placeholder: '検索', 'aria-label': 'Search', local: true do |f| %>
   <%= f.text_field :content, class: 'search-form-in  mt-1 mr-1' %>
+  <%= f.text_field :tag_list, class: 'search-form-in  mt-1 mr-1' %>
   <%= f.select :model, options_for_select({ 'Number' => 'number', 'Name' => 'name' }), {}, { class: 'form-select search-select  mt-1 mr-1' } %>
   <%= f.select :method, options_for_select({ 'Perfect' => 'perfect', 'Forward' => 'forward', 'Backward' => 'backward', 'Partial' => 'partial' }), {}, { class: 'form-select search-select  mt-1 mr-1' } %>
   <%= f.select :keyword, options_for_select({ 'New' => 'new', 'Old' => 'old', 'Many' => 'many', 'Few' => 'few' }), {}, { class: 'form-select search-select  mt-1 mr-1' } %>
   <%= f.submit 'Search', class: 'btn-outline-secondary search-btn mt-1' %>
 <% end %>
-
-<!--d-flex-->

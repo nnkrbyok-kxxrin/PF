@@ -15,29 +15,36 @@ class Guest < ApplicationRecord
   end
 
   # 下記のguestsは条件検索される結果のこと
-  def self.number_search_for(content, method, sort)
+  def self.number_search_for(content, method, sort, tag_list)
     # 入力が空文字の場合
     if content == ''
-       guests = Guest.all
+      # guests = Guest.all
+      guests = Guest.includes(posts: :tags).where(:tags => {:tag_name => ['テスト','てすと']}).uniq
+      p 'case a'
     else
       if method == 'perfect'
         guests = Guest.where(number: content)
+        p 'case b'
       elsif method == 'forward'
         guests = Guest.where('number LIKE ?', content + '%')
+        p 'case c'
       elsif method == 'backward'
         guests = Guest.where('number LIKE ?', '%' + content)
+        p 'case d'
       else
         guests = Guest.where('number LIKE ?', '%' + content + '%')
+        p 'case e'
       end
     end
     self.sort_by_params(guests, sort)
   end
 
   # 下記のguestsは条件検索される結果のこと
-  def self.name_search_for(content, method, sort)
+  def self.name_search_for(content, method, sort, tag_list)
     # 入力が空文字の場合
     if content == ''
-       guests = Guest.all
+      # guests = Guest.all
+       guests = Guest.includes(posts: :tags).where(:tags => {:tag_name => ['テスト','てすと']}).uniq
     else
       if method == 'perfect'
         guests = Guest.where(name: content)
@@ -71,3 +78,7 @@ class Guest < ApplicationRecord
   end
 
 end
+
+
+
+# Guest.includes(posts: :tags).where(:tags => {:tag_name => ['テスト','てすと']}).un
