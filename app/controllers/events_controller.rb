@@ -53,6 +53,7 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :body, :start_time, :admin_id)
   end
 
+
     # 以下はfullcalendar用の記述
 
     # def index

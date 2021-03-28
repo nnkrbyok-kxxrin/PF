@@ -17,7 +17,7 @@
 
             <%= form_with model: @task_new, local: true, url: tasks_path(@task), method: :post do |f| %>
       </div>
-              <%= f.text_field :body, rows: '5',placeholder: '', class: 'form-control' %>
+              <%= f.text_field :body, rows: '5',placeholder: 'Please enter the text!', class: 'form-control' %>
             <%= f.submit 'Try!', class: 'w-100 btn btn-secondary mt-2 mb-3' %>
             <% end %>
 
