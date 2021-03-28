@@ -1,56 +1,56 @@
 <!--ページング非同期通信実装のため、一番上側の記述以外はguests/index同様-->
-  <div class='background text-font'>
-    <div class='container'>
-      <div class='row'>
+<div class='background text-font'>
+  <div class='container'>
+    <div class='row'>
 
-        <div class='table table-light task-table mt-5 px-3 py-3'>
-          <div class='task mx-3 my-3'>
-            <h4 class='font-size'><span class='fas fa-star-and-crescent'></span> <span class='fas fa-sun'></span> Only one <%= link_to 'go', about_path, class: 'about-link' %>al for today!</h4></br>
-            <% @tasks.each do |task| %>
-            <%= task.body %>
-              <% if task.admin == current_admin %>
-                <%= link_to task_path(task,task), method: :delete do %>
-                <span class='fas fa-check-circle fa-lg icon-link'></span>
-                <% end %>
+      <div class='table table-light task-table mt-5 px-3 py-3'>
+        <div class='task mx-3 my-3'>
+          <h4 class='font-size'><span class='fas fa-star-and-crescent'></span> <span class='fas fa-sun'></span> Only one <%= link_to 'go', about_path, class: 'about-link' %>al for today!</h4></br>
+          <% @tasks.each do |task| %>
+          <%= task.body %>
+            <% if task.admin == current_admin %>
+              <%= link_to task_path(task,task), method: :delete do %>
+              <span class='fas fa-check-circle fa-lg icon-link'></span>
               <% end %>
             <% end %>
-          </div>
-
-              <%= form_with model: @task_new, local: true, url: tasks_path(@task), method: :post do |f| %>
+          <% end %>
         </div>
-                <%= f.text_field :body, rows: '5',placeholder: 'Please enter the text!', class: 'form-control' %>
-              <%= f.submit 'Try!', class: 'w-100 btn btn-secondary mt-2 mb-3' %>
-              <% end %>
 
-
-        <table class='table table-light table-hover table-customize'>
-          <thead>
-            <tr>
-              <th scope='col'>Check</th>
-              <th scope='col'>Guest Number</th>
-              <th scope='col'>Guest Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @guests.each do |guest| %>
-            <tr>
-              <th scope='row'>
-                <!--下記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
-                <span id='bookmarks_buttons_<%= guest.id %>'>
-                <%= render 'bookmarks/bookmark-btn', guest: guest %>
-                </span>
-              </th>
-              <td>No.<%= guest.number %></td>
-              <td><%= link_to guest.name, guest_path(guest.id), class: 'text-link' %></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
-
-          <div class='mx-auto mt-4'>
-            <%= paginate @guests, window: 2, remote: true %>
-          </div>
-
+            <%= form_with model: @task_new, local: true, url: tasks_path(@task), method: :post do |f| %>
       </div>
+              <%= f.text_field :body, rows: '5',placeholder: 'Please enter the text!', class: 'form-control' %>
+            <%= f.submit 'Try!', class: 'w-100 btn btn-secondary mt-2 mb-3' %>
+            <% end %>
+
+
+      <table class='table table-light table-hover table-customize'>
+        <thead>
+          <tr>
+            <th scope='col'>Check</th>
+            <th scope='col'>Guest Number</th>
+            <th scope='col'>Guest Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @guests.each do |guest| %>
+          <tr>
+            <th scope='row'>
+              <!--下記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
+              <span id='bookmarks_buttons_<%= guest.id %>'>
+              <%= render 'bookmarks/bookmark-btn', guest: guest %>
+              </span>
+            </th>
+            <td>No.<%= guest.number %></td>
+            <td><%= link_to guest.name, guest_path(guest.id), class: 'text-link' %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+        <div class='mx-auto mt-4'>
+          <%= paginate @guests, window: 2, remote: true %>
+        </div>
+
     </div>
   </div>
+</div>
