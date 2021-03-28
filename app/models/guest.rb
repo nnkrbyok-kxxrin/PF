@@ -13,55 +13,62 @@ class Guest < ApplicationRecord
   def bookmarked_by?(admin)
     bookmarks.where(admin_id: admin.id).exists?
   end
+  
+  # 検索について
+  # ・タグ検索のみの場合（contentは空文字、tag_listは入力あり） => tag_list,keywordのみ実装、その他はスルー
+  # ・contentが入力された場合 => content,model,method,keywordは必ず実装
+  #   >> tag_listが入力された場合はtag_listも実装し、tag_listが空文字の場合はスルー、タグ検索必須ではない
+  # ・content,tag_listが空文字の場合 => keywordのみ実装、その他はスルー
+  # ・あらゆる検索条件であっても並び替え機能（keyword）は必ず実装
 
-  # 下記のguestsは条件検索される結果のこと
-  def self.number_search_for(content, method, sort, tag_list)
-    # 入力が空文字の場合
-    if content == ''
-      # guests = Guest.all
-      guests = Guest.includes(posts: :tags).where(:tags => {:tag_name => ['テスト','てすと']}).uniq
-      p 'case a'
+  def self.content_search_for(guests, content, model, method)
+    if model == "number"
+      Guest.number_search_for(guests, content, method)
     else
-      if method == 'perfect'
-        guests = Guest.where(number: content)
-        p 'case b'
-      elsif method == 'forward'
-        guests = Guest.where('number LIKE ?', content + '%')
-        p 'case c'
-      elsif method == 'backward'
-        guests = Guest.where('number LIKE ?', '%' + content)
-        p 'case d'
-      else
-        guests = Guest.where('number LIKE ?', '%' + content + '%')
-        p 'case e'
-      end
+      Guest.name_search_for(guests, content, method)
     end
-    self.sort_by_params(guests, sort)
   end
 
   # 下記のguestsは条件検索される結果のこと
-  def self.name_search_for(content, method, sort, tag_list)
-    # 入力が空文字の場合
-    if content == ''
-      # guests = Guest.all
-       guests = Guest.includes(posts: :tags).where(:tags => {:tag_name => ['テスト','てすと']}).uniq
+  def self.number_search_for(guests, content, method)
+    # content入力が空文字の場合
+    return guests if content == ''
+
+    if method == 'perfect'
+      guests.where(number: content)
+    elsif method == 'forward'
+      guests.where('number LIKE ?', content + '%')
+    elsif method == 'backward'
+      guests.where('number LIKE ?', '%' + content)
     else
-      if method == 'perfect'
-        guests = Guest.where(name: content)
-      elsif method == 'forward'
-        guests = Guest.where('name LIKE ?', content + '%')
-      elsif method == 'backward'
-        guests = Guest.where('name LIKE ?', '%' + content)
-      else
-        guests = Guest.where('name LIKE ?', '%' + content + '%')
-      end
+      guests.where('number LIKE ?', '%' + content + '%')
     end
-    guests = self.sort_by_params(guests, sort)
+  end
+
+  # 下記のguestsは条件検索される結果のこと
+  def self.name_search_for(guests, content, method)
+    # content入力が空文字の場合
+    return guests if content == ''
+
+    if method == 'perfect'
+      guests.where(name: content)
+    elsif method == 'forward'
+      guests.where('name LIKE ?', content + '%')
+    elsif method == 'backward'
+      guests.where('name LIKE ?', '%' + content)
+    else
+      guests.where('name LIKE ?', '%' + content + '%')
+    end
+  end
+
+  # 検索機能にタグ検索機能追加
+  # 下記のguestsは条件検索された結果のこと
+  def self.tag_search_for(guests, tag_list)
+    guests.includes(posts: :tags).where(:tags => {:tag_name => tag_list})
   end
 
   # 検索機能に並び替え機能追加
   # 下記のguestsは条件検索された結果のこと => guests対して並び替えを行う
-  # 空文字の場合は全ての投稿に対して並び替え機能のみを実装（controllerで定義）
   def self.sort_by_params(guests, keyword)
     if keyword == 'new'
       guests.order(created_at: :desc)
@@ -78,7 +85,3 @@ class Guest < ApplicationRecord
   end
 
 end
-
-
-
-# Guest.includes(posts: :tags).where(:tags => {:tag_name => ['テスト','てすと']}).un

@@ -9,26 +9,14 @@ class SearchController < ApplicationController
 		# 検索機能にタグ検索追加
 		@tag_list = params[:tag_list]
 
-		# 検索結果に対してページング機能記述を追記
-		# if @content.blank?
-		# 	@records = Guest.all
-		# 	@records = Guest.sort_by_params(@records, @sort).page(params[:page])
-		# 	# 空文字の場合は全ての投稿に対して並び替え機能のみを実装（上記３行）
-		# elsif @model == 'number'
-		# 	@records = Guest.number_search_for(@content, @method, @sort).page(params[:page])
-		# elsif @model == 'name'
-		# 	@records = Guest.name_search_for(@content, @method, @sort).page(params[:page])
-		# end
-		# ログインしている人に基づくものしか表示させないため、上記if文を下記に変更
-		if @content.blank?
-			@records = current_admin.guests.all
-			@records = current_admin.guests.sort_by_params(@records, @sort).page(params[:page])
-			# 空文字の場合は全ての投稿に対して並び替え機能のみを実装（上記３行）
-		elsif @model == 'number'
-					@records = current_admin.guests.number_search_for(@content, @method, @sort, @tag_list).page(params[:page])
-		elsif @model == 'name'
-					@records = current_admin.guests.name_search_for(@content, @method, @sort, @tag_list).page(params[:page])
-		end
+		# ログインしている人に基づくもののみを表示
+		@records = current_admin.guests.all
+		# contentに入力がある？ => あればcontent_search_forへ
+		@records = Guest.content_search_for(@records, @content, @model, @method) if params[:content].present?
+		# tag_listに入力がある？ => あればtag_search_forへ
+		@records = @records.tag_search_for(@records, params[:tag_list].split(',')) if params[:tag_list].present?
+		# 全ての検索結果に対して並び替え機能実装+ページング機能記述を追記
+		@records = Guest.sort_by_params(@records, @sort).page(params[:page])
 
     # Postのページング・非同期実装のため、下記４行を追記
 		respond_to do |format|

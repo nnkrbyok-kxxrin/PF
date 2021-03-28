@@ -55,18 +55,18 @@
   border-spacing: 0;
   border-radius: 6px;
 
-// @media screen and (max-width:480px) {
-// // // 画面サイズが480pxまでの幅の場合に適応される
-// .box-background{
-//   background-color: white;
-//   border-color: gray;
-//   color: gray;
+@media screen and (max-width:480px) {
+// // 画面サイズが480pxまでの幅の場合に適応される
+.box-background{
+  background-color: white;
+  border-color: gray;
+  color: gray;
 
-//   border: 1px solid;
-//   border-collapse: separate;
-//   border-spacing: 0;
-//   border-radius: 6px;
-//   }}
+  border: 1px solid;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 6px;
+  }}
 }
 
 // フッター
@@ -95,6 +95,44 @@ footer{
 // 編集フォーム文字
 .text-edit{
   color: #gray;
+}
+
+// プレースフォルダー
+/* for Webkit */
+.form-control::-webkit-input-placeholder{
+    color: #CCCCCC;
+}
+
+/* for Firefox */
+.form-control::-moz-placeholder{
+    color: #CCCCCC;
+}
+
+/* for Firefox 18以前 */
+.form-control:-moz-placeholder{
+    color: #CCCCCC;
+}
+
+/* for Windows IE */
+.form-control:-ms-input-placeholder{
+    color: #CCCCCC;
+}
+
+input::placeholder,
+text_field::placeholder {
+	color: #CCCCCC;
+}
+
+/* Edge */
+input::-ms-input-placeholder,
+text_field::-ms-input-placeholder {
+	color: #CCCCCC;
+}
+
+/* IE11 & IE10 */
+input:-ms-input-placeholder,
+text_field:-ms-input-placeholder {
+	color: #CCCCCC;
 }
 
 // 文字リンク
