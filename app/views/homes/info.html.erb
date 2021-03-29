@@ -5,15 +5,36 @@
       <div class='mx-auto box-background message-box col-md-10 my-5'>
         <div class='message-overall py-5 px-5'>
           <h1 class='message-title'>Information</h1></br>
-          <h5 class='message-body message-font-size'>
+          <h5 class='message-body-info message-font-size'>
             当サイトはお客様情報管理・簡易カルテとしてご利用いただけます。</br>
+            </br>
             覚えておきたいお客様とのやりとりや、</br>
-            記録しておきたい事柄を画像やスマイル度付きで投稿可能！</br>
-            お客様のご来店ごとに情報を追加していただき、</br>
-            並び替え付き検索機能でいつでもご確認いただけます。</br>
-            全ての登録ゲストをご確認いただく場合は</br>
-            検索フォーム未入力のまま並び替え機能のみをご使用ください。</br>
-            一日の始まりにHomeにて今日の目標や心構えを必ずひとつ投稿し、</br>
+            記録しておきたい事柄を画像やタグ、スマイル度付きで投稿可能！</br>
+            お客様のご来店ごとに情報を追加してください！</br>
+            </br>
+            お客様の情報は並び替え付き検索機能でいつでもご確認いただけます。</br>
+            </br>
+            通常検索の場合</br>
+            1.一番左のフォームに検索ワードを入力（カルテ番号、または名前の一部）</br>
+            2.タグ入力(,区切りで複数タグ検索対応、未入力でも検索可能)</br>
+            3.カルテ番号、または名前を選択</br>
+            4.完全一致、前方一致、後方一致、部分一致のいずれかを選択</br>
+            5.来店時期が新しいお客様、古いお客様、</br>
+              来店数が多いお客様、少ないお客様のいずれかを選択（並び替え）</br>
+            </br>
+            タグ検索のみをご希望の場合</br>
+            1.タグ入力(,区切りで複数タグ検索対応)</br>
+            2.来店時期が新しいお客様、古いお客様、</br>
+              来店数が多いお客様、少ないお客様のいずれかを選択（並び替え）</br>
+            上記のみを入力、その他は未入力</br>
+            </br>
+            全てのお客様をご確認いただく場合</br>
+            1.来店時期が新しいお客様、古いお客様、</br>
+              来店数が多いお客様、少ないお客様のいずれかを選択（並び替え）</br>
+            上記の並び替えのみを選択し、その他は未入力</br>
+            </br>
+            <span class='message-text'> Thanks Collection </span> >> Github <%= link_to 'README.md', 'https://github.com/nnkrbyok-kxxrin/thanks_collection', class: 'text-link' %>
+            </br>
           <%= link_to about_path, class: 'fas fa-angle-double-left fa-2x icon-link icon-link-about mt-3', local: true do %>
           <% end %>
           </h5>
