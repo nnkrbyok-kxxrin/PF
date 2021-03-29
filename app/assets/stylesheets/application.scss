@@ -141,10 +141,26 @@ text_field:-ms-input-placeholder {
   color: gray;
 }
 
-// 文字下線
-.under {
+// 文字下線（マーカー風）
+.under-blue{
   // text-decoration : underline;
   background: linear-gradient(transparent 50%, #CCFFFF 50%);
+}
+
+// 文字下線（マーカー風）
+.under-pink{
+  // text-decoration : underline;
+  background: linear-gradient(transparent 50%, #FFDDFF 50%);
+}
+
+// 文字下線（点線）
+.under-dotted-line{
+  border-bottom: dotted 3px #BBFFFF;
+}
+
+// 文字下線（破線）
+.under-dashed-line{
+  border-bottom: dashed 3px #BBFFFF;
 }
 
 // アイコンリンク

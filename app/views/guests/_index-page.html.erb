@@ -1,11 +1,11 @@
 <!--ページング非同期通信実装のため、一番上側の記述以外はguests/index同様-->
-<div class='background text-font' id='pagenate-index'>
+<div class='background text-font'>
   <div class='container'>
     <div class='row'>
 
       <div class='table table-light task-table mt-5 px-3 py-3'>
         <div class='task mx-3 my-3'>
-          <h4 class='font-size'><span class='fas fa-star-and-crescent'></span> <span class='fas fa-sun'></span> Only one <%= link_to 'go', about_path, class: 'about-link' %>al for today!</h4></br>
+          <h4 class='font-size'><span class='fas fa-star-and-crescent'></span> <span class='fas fa-sun'></span> Only one <%= link_to 'go', info_path, class: 'about-link' %>al for today!</h4></br>
           <% @tasks.each do |task| %>
             <%= task.body %>
             <% if task.admin == current_admin %>
