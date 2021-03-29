@@ -1,5 +1,5 @@
 <!--ページング非同期通信実装のため、一番上側の記述以外はguests/index同様-->
-<div class='background text-font'>
+<div class='background text-font' id='pagenate-index'>
   <div class='container'>
     <div class='row'>
 
@@ -7,21 +7,20 @@
         <div class='task mx-3 my-3'>
           <h4 class='font-size'><span class='fas fa-star-and-crescent'></span> <span class='fas fa-sun'></span> Only one <%= link_to 'go', about_path, class: 'about-link' %>al for today!</h4></br>
           <% @tasks.each do |task| %>
-          <%= task.body %>
+            <%= task.body %>
             <% if task.admin == current_admin %>
-              <%= link_to task_path(task,task), method: :delete do %>
+              <%= link_to task_path(task), method: :delete do %>
               <span class='fas fa-check-circle fa-lg icon-link'></span>
               <% end %>
             <% end %>
           <% end %>
         </div>
-
-            <%= form_with model: @task_new, local: true, url: tasks_path(@task), method: :post do |f| %>
       </div>
-              <%= f.text_field :body, rows: '5',placeholder: 'Please enter the text!', class: 'form-control' %>
-            <%= f.submit 'Try!', class: 'w-100 btn btn-secondary mt-2 mb-3' %>
-            <% end %>
 
+        <%= form_with model: @task_new, class: 'task-form mx-auto', local: true, url: tasks_path, method: :post do |f| %>
+          <%= f.text_field :body, placeholder: 'Please enter the text!', class: 'form-control' %>
+        <%= f.submit 'Try!', class: 'btn btn-secondary task-btn mx-auto mt-2 mb-3' %>
+        <% end %>
 
       <table class='table table-light table-hover table-customize'>
         <thead>

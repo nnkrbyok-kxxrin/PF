@@ -248,6 +248,7 @@ text_field:-ms-input-placeholder {
     font-size: 22px;
 }}
 
+// タスクテーブル
 .task-table{
   border: 1px solid;
   border-collapse: separate;
@@ -258,6 +259,18 @@ text_field:-ms-input-placeholder {
 
 .task{
   color: gray;
+}
+
+// タスクフォーム
+.task-form{
+  width: 100%;
+  margin: 0 auto;
+}
+
+// タスクボタン
+.task-btn{
+  width: 100%;
+  margin: 0 auto;
 }
 
 // ブックマーク（いいね）
