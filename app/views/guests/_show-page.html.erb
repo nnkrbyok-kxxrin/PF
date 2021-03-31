@@ -35,7 +35,7 @@
                     <% if @guest.address == '' %>
                       <p>未記入</p>
                     <% else %>
-                      <p><%= @guest.address %></p>
+                      <pre><%= @guest.address %></pre>
                     <% end %>
                   </td>
                 </tr>
@@ -59,7 +59,7 @@
                     <% if @guest.allergie == '' %>
                       <p>未記入</p>
                     <% else %>
-                      <p><%= @guest.allergie %></p>
+                      <pre><%= @guest.allergie %></pre>
                     <% end %>
                   </td>
                 </tr>
@@ -69,7 +69,7 @@
                     <% if @guest.profession == '' %>
                       <p>未記入</p>
                     <% else %>
-                      <p><%= @guest.profession %></p>
+                      <pre><%= @guest.profession %></pre>
                     <% end %>
                   </td>
                 </tr>
