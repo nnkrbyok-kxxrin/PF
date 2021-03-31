@@ -33,7 +33,7 @@
               </tr>
               <tr>
                 <th scope='row'>Contents</th>
-                <td><pre><%= @event.body %></pre></td>
+                <td><%= simple_format(h(@event.body)) %></td>
               </tr>
             </tbody>
           </table>
@@ -46,7 +46,7 @@
           </div>
           <div class='mb-3'>
             <label for='formGroupExampleInput2' class='form-label'>Contents</label>
-            <%= f.text_field :body, id:'inputContents', placeholder: '', class: 'form-control mb-3' %>
+            <%= f.text_area :body, id:'inputContents', placeholder: '', class: 'form-control mb-3' %>
           </div>
           <div class='mb-3'>
             <label for='formGroupExampleInput2' class='form-label'>Time</label>
