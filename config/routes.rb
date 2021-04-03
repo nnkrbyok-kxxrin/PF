@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :admins
 
   root to: 'homes#top'
+  
+  # ゲストログイン機能実装
+  # post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
   # get 'search/search'
   # 上記のデフォルトの記述を以下に変更
