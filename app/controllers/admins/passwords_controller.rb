@@ -5,7 +5,10 @@ class Admins::PasswordsController < Devise::PasswordsController
 
   def ensure_normal_admin
     if params[:admin][:email].downcase == 'guest@example.com'
-       redirect_to new_admin_session_path, alert: '閲覧用アカウントのパスワード設定はできません！'
+       redirect_to new_admin_session_path, alert: '閲覧用アカウント設定は変更できません！'
+    end
+    if params[:admin][:name] == 'guest'
+       redirect_to new_admin_session_path, alert: '閲覧用アカウント設定は変更できません！'
     end
   end
 

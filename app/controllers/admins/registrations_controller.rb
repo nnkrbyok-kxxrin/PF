@@ -5,7 +5,10 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 
   def ensure_normal_admin
     if resource.email == 'guest@example.com'
-       redirect_to guests_path, alert: '閲覧用アカウントの編集・削除はできません！'
+       redirect_to guests_path, alert: '閲覧用アカウント設定は変更できません！'
+    end
+    if resource.name == 'guest'
+       redirect_to guests_path, alert: '閲覧用アカウント設定は変更できません！'
     end
   end
 

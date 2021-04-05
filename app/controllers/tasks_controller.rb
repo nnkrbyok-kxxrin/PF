@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-
+  
   def create
     @task_new = Task.new(task_params)
     @task_new.admin_id = current_admin.id
