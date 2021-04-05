@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
 
-  devise_for :admins
+  # devise_for :adminsをゲストログイン機能実装により、以下に変更
+  devise_for :admins, controllers: {
+    registrations: 'admins/registrations',
+    passwords: 'admins/passwords'
+  }
 
   root to: 'homes#top'
-  
+
   # ゲストログイン機能実装
-  # post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
+  devise_scope :admin do
+    post 'admins/guest_sign_in', to: 'admins/sessions#guest_sign_in'
+  end
 
   # get 'search/search'
   # 上記のデフォルトの記述を以下に変更
