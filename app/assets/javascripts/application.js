@@ -20,3 +20,23 @@
 //= require moment
 //= require fullcalendar
 //= require jquery.raty.js
+
+$(function() {
+    var pagetop = $('#page_top');
+    pagetop.hide();
+    // 100pxスクロールしたら表示
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            pagetop.fadeIn();
+        } else {
+            pagetop.fadeOut();
+        }
+    });
+    // 0.5秒かけてページトップへ移動
+    pagetop.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
