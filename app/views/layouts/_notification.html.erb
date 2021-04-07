@@ -1,6 +1,9 @@
-<% if flash[:notice] %>
-  <div class='Notification'>
-    </br>
-    <%= flash[:notice] %>
-  </div>
+<!--ゲストログインの場合のみフラッシュメッセージを表示-->
+<% if Admin.guest == current_admin %>
+  <% if flash[:notice] %>
+    <div class='Notification'>
+      </br>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
 <% end %>
