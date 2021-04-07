@@ -54,6 +54,9 @@
                 });
                 </script>
             <%= f.submit 'Update!', class: 'w-100 btn btn-secondary' %>
+            <%= link_to guest_post_path(@guest.id, @post.id), method: :delete do %>
+              <%= f.submit 'Delete!', class: 'w-100 btn btn-outline-secondary mt-2' %>
+            <% end %>
           <% end %>
 
       </div>
