@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :events, only:[:index, :show, :create, :update, :destroy]
 
   resources :guests do
-    resources :posts, only:[:create, :destroy]
+    resources :posts, only:[:create, :edit, :update, :destroy]
     resource :bookmarks, only:[:create, :destroy]
   end
 

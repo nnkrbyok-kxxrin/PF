@@ -7,6 +7,7 @@ class Post < ApplicationRecord
 
   attachment :image
 
+  validates :date_and_time, presence: true
   validates :infomation, presence: true
 
   # レビュー機能

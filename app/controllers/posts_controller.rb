@@ -20,6 +20,21 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @guest = current_admin.guests.find(params[:guest_id])
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @guest = current_admin.guests.find(params[:guest_id])
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+        redirect_to guest_path(@guest.id)
+    else
+        render :edit
+    end
+  end
+
   def destroy
     Post.find_by(id: params[:id], guest_id: params[:guest_id]).destroy
     redirect_to guest_path(params[:guest_id])
@@ -28,7 +43,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:admin_id, :guest_id, :image, :infomation, :rate)
+    params.require(:post).permit(:admin_id, :guest_id, :image, :date_and_time, :infomation, :rate)
   end
 
 end

@@ -32,9 +32,9 @@
                   <th scope='row'>Address</th>
                   <td>
                     <% if @guest.address == '' %>
-                      <p>未記入</p>
+                      <span>未記入</span>
                     <% else %>
-                      <p><%= simple_format(h(@guest.address)) %></p>
+                      <span><%= simple_format(h(@guest.address)) %></span>
                     <% end %>
                   </td>
                 </tr>
@@ -42,9 +42,9 @@
                   <th scope='row'>Birthday</th>
                   <td>
                     <% if @guest.birthday == nil %>
-                      <p>未記入</p>
+                      <span>未記入</span>
                     <% else %>
-                      <p><%= @guest.birthday %></p>
+                      <span><%= @guest.birthday %></span>
                     <% end %>
                   </td>
                 </tr>
@@ -56,9 +56,9 @@
                   <th scope='row'>Allergie</th>
                   <td>
                     <% if @guest.allergie == '' %>
-                      <p>未記入</p>
+                      <span>未記入</span>
                     <% else %>
-                      <p><%= simple_format(h(@guest.allergie)) %></p>
+                      <span><%= simple_format(h(@guest.allergie)) %></span>
                     <% end %>
                   </td>
                 </tr>
@@ -66,15 +66,20 @@
                   <th scope='row'>Profession</th>
                   <td>
                     <% if @guest.profession == '' %>
-                      <p>未記入</p>
+                      <span>未記入</span>
                     <% else %>
-                      <p><%= simple_format(h(@guest.profession)) %></p>
+                      <span><%= simple_format(h(@guest.profession)) %></span>
                     <% end %>
                   </td>
                 </tr>
+                <!--<tr>-->
+                <!--  <th scope='row'>First Time</th>-->
+                <!--  <td><%#= @guest.created_at.strftime('%Y/%m/%d') %></td>-->
+                <!--</tr>-->
+                <!--自由な記入方法が出来るように、上記を下記に変更-->
                 <tr>
-                  <th scope='row'>First Time</th>
-                  <td><%= @guest.created_at.strftime('%Y/%m/%d') %></td>
+                  <th scope='row'>Date and Time</th>
+                  <td><%= @guest.date_and_time %></td>
                 </tr>
                 <tr>
                   <th scope='row'>Number of visits</th>
@@ -82,7 +87,8 @@
                 </tr>
                 <tr>
                   <td></td>
-                  <td class='text-md-right'><% if @guest.admin == current_admin %>
+                  <td class='text-md-right'>
+                    <% if @guest.admin == current_admin %>
                         <%= link_to edit_guest_path(@guest) do %>
                           <span class='fas fa-edit fa-2x icon-link'></span>
                         <% end %>｜
@@ -107,6 +113,7 @@
 
             <div class='new-post'>
               <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
+                <%= f.text_field :date_and_time, placeholder: 'Date and Time', class: 'form-control mb-3' %>
                 <%= f.text_area :infomation, rows: '7', placeholder: 'Please enter the information!', class: 'form-control mb-3' %>
                 <%= f.text_field :tag_name, placeholder: 'Please enter the tag! [Example] ○○,△□', class: 'form-control mb-3' %>
                 <%= f.attachment_field :image, class: 'text mb-3' %></br>
@@ -116,6 +123,7 @@
                 </div>
                 <!--以下、JavaScript-->
                   <script>
+                  $('#star').empty();
                   $('#star').raty({
                     size     : 36,
                     starOff:  '<%= asset_path('star-off.png') %>',
@@ -134,8 +142,13 @@
         <div class='col-md-6 mt-5 py-5 px-5 box-background'>
           <div class='posts'>
             <% @posts.each do |write| %>
-              <%= write.created_at.strftime('%Y/%m/%d') %>｜
+              <%#= write.created_at.strftime('%Y/%m/%d') %>
+              <!--自由な記入方法が出来るように、上記を下記に変更-->
+              <%= write.date_and_time %>｜
                 <% if write.admin == current_admin %>
+                  <%= link_to edit_guest_post_path(@guest.id, write.id) do %>
+                    <span class='fas fa-edit fa-lg icon-link mb-3'></span>
+                  <% end %>｜
                   <%= link_to guest_post_path(write.guest,write), method: :delete do %>
                     <span class='fas fa-trash-alt fa-lg icon-link mb-3'></span>
                   <% end %>
@@ -144,8 +157,9 @@
               <!--%= attachment_image_tag @post, :image, :fill, 40, 40, format: 'jpeg', fallback: "phonto.JPG", size: "300x300" %>-->
               <!--format: 'jpeg'も現時点で拡張子を指定して保存する必要がないため不要、下記の記述に変更-->
               <%= attachment_image_tag write, :image, fallback: 'phonto3.JPG', size: '480x640', class: 'image-guest mb-3' %>
-              <div class='mb-3', id='star-rate-<%= write.id %>'></div>
+              <div class='mb-3' id='star-rate-<%= write.id %>'></div>
               <script>
+              $('#star-rate-<%= write.id %>').empty();
               $('#star-rate-<%= write.id %>').raty({
                 size: 36,
                 starOff:  '<%= asset_path('star-off.png') %>',

@@ -9,11 +9,12 @@ class Guest < ApplicationRecord
   validates :number, presence: true
   validates :phone_number, presence: true
   validates :sex, presence: true
+  validates :date_and_time, presence: true
 
   def bookmarked_by?(admin)
     bookmarks.where(admin_id: admin.id).exists?
   end
-  
+
   # 検索について
   # ・タグ検索のみの場合（contentは空文字、tag_listは入力あり） => tag_list,keywordのみ実装、その他はスルー
   # ・contentが入力された場合 => content,model,method,keywordは必ず実装

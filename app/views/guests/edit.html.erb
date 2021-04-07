@@ -19,7 +19,7 @@
           <%= link_to guest_path(@guest), class: 'fas fa-angle-double-left fa-2x icon-link mb-2', local: true do %>
           <% end %>
 
-          <%= form_with model: @guest, local:true do |f| %>
+          <%= form_with model: @guest, local: true do |f| %>
           <div class='mb-3'>
             <label for='formGroupExampleInput' class='form-label'>Number</label>
             <%= f.text_field :number, id:'inputNumber', placeholder: '', class: 'form-control mb-3' %>
@@ -54,7 +54,11 @@
           </div>
           <div class='mb-3'>
             <label for='formGroupExampleInput2' class='form-label'>Profession</label>
-            <%= f.text_area :profession, id:'inputProfession', placeholder: '', class: 'form-control mb-4' %>
+            <%= f.text_area :profession, id:'inputProfession', placeholder: '', class: 'form-control mb-3' %>
+          </div>
+          <div class='mb-3'>
+            <label for='formGroupExampleInput2' class='form-label'>Date and Time</label>
+            <%= f.text_field :date_and_time, id:'inputDate_and_Time', placeholder: '', class: 'form-control mb-4' %>
           </div>
           <%= f.submit 'Update!', class: 'w-100 btn btn-secondary' %>
           <% end %>
