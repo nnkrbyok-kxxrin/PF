@@ -49,6 +49,9 @@
                       <%= link_to 'Home', guests_path, class: 'nav-link' %>
                     </li>
                     <li class='nav-item'>
+                      <%= link_to 'My-page', edit_admin_path(current_admin.id), class: 'nav-link' %>
+                    </li>
+                    <li class='nav-item'>
                       <%= link_to 'Schedule', events_path, class: 'nav-link' %>
                     </li>
                     <li class='nav-item'>
@@ -71,7 +74,7 @@
                       <%= link_to 'Sign-in', new_admin_session_path, class: 'nav-link' %>
                     </li>
                     <li class='nav-item'>
-                      <%= link_to 'Guest-login', admins_guest_sign_in_path, method: :post, class: 'nav-link' %>
+                      <%= link_to 'Guest-login', guest_sign_in_path, method: :post, class: 'nav-link' %>
                     </li>
                   <% end %>
                 </ul>

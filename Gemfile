@@ -86,3 +86,5 @@ gem 'simple_calendar', '~> 2.0'
 
 gem 'rubocop', require: false
 gem 'rubocop-rails'
+
+gem 'rails-i18n'

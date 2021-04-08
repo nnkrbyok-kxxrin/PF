@@ -3,3 +3,38 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%m/%d %H:%M"
+
+ja:
+  activerecord:
+    attributes:
+      admin:
+        name: 名前
+        email: メールアドレス
+
+      event:
+        title: タイトル
+        body: 内容
+        start_time: 開始日時
+
+      guest:
+        name: 名前
+        name_kana: ふりがな
+        number: 番号
+        phone_number: 電話番号
+        address: 住所
+        birthday: 生年月日
+        sex: 性別
+        allergie: アレルギー
+        profession: 職業
+        date_and_time: 初回日時
+
+      post:
+        infomation: 情報
+        rate: スマイル度
+        date_and_time: 日時
+
+      tag:
+        tag_name: タグ
+
+      task:
+        body: 内容

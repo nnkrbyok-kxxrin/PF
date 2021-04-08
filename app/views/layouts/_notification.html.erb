@@ -1,9 +1,11 @@
-<!--ゲストログインの場合のみフラッシュメッセージを表示-->
+<!--ゲストログインの場合のみフラッシュメッセージを表示する-->
 <% if Admin.guest == current_admin %>
-  <% if flash[:notice] %>
-    <div class='Notification'>
-      </br>
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
+  <div class='Notification'>
+    </br>
+    <% if flash[:notice] %>
+        <%= flash[:notice] %>
+    <% else flash[:alert] %>
+        <%= flash[:alert] %>
+    <% end %>
+  </div>
 <% end %>

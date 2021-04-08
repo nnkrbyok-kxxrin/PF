@@ -12,9 +12,12 @@ class Admin < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :tags, dependent: :destroy
 
+  validates :name, presence: true
+  validates :email, presence: true
+
   # ゲストログイン機能実装
   def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |admin|
+    find_or_create_by!(name: 'Guest-user', email: 'guest@example.com') do |admin|
       # パスワードはランダム
       admin.password = SecureRandom.urlsafe_base64
     end

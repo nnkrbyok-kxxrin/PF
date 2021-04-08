@@ -21,14 +21,18 @@
 //= require fullcalendar
 //= require jquery.raty.js
 
-$(function() {
+// リンクタグでページ移動した際に正しく読み込みがされるように「$(document).on('turbolinks:load',」を追加
+$(document).on('turbolinks:load',function() {
     var pagetop = $('#page_top');
     pagetop.hide();
+    // console.log("page_topは無効化されています")
     // 100pxスクロールしたら表示
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             pagetop.fadeIn();
+            console.log("フェードイン")
         } else {
+            console.log("フェードアウト")
             pagetop.fadeOut();
         }
     });
