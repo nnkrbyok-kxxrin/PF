@@ -25,14 +25,11 @@
 $(document).on('turbolinks:load',function() {
     var pagetop = $('#page_top');
     pagetop.hide();
-    // console.log("page_topは無効化されています")
     // 100pxスクロールしたら表示
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             pagetop.fadeIn();
-            console.log("フェードイン")
         } else {
-            console.log("フェードアウト")
             pagetop.fadeOut();
         }
     });

@@ -23,13 +23,16 @@ class PostsController < ApplicationController
   def edit
     @guest = current_admin.guests.find(params[:guest_id])
     @post = Post.find(params[:id])
+    @tag_list = @post.tags.pluck(:tag_name).join(',')
   end
 
   def update
     @guest = current_admin.guests.find(params[:guest_id])
     @post = Post.find(params[:id])
+    tag_list = params[:post][:tag_name].split(',')
     if @post.update(post_params)
-        redirect_to guest_path(@guest.id)
+       @post.save_tags(tag_list)
+       redirect_to guest_path(@guest.id)
     else
         render :edit
     end
