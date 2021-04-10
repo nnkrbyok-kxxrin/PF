@@ -21,19 +21,19 @@
         <% end %>
 
         <table class='table table-borderless table-light table-customize mt-3'>
-            <tbody>
-              <tr>
-                <th scope='row'>Name</th>
-                <td><%= @admin.name %></td>
-              </tr>
-              <tr>
-                <th scope='row'>Email</th>
-                <td><%= @admin.email %></td>
-              </tr>
-            </tbody>
-          </table>
+          <tbody>
+            <tr>
+              <th scope='row'>Name</th>
+              <td><%= @admin.name %></td>
+            </tr>
+            <tr>
+              <th scope='row'>Email</th>
+              <td><%= @admin.email %></td>
+            </tr>
+          </tbody>
+        </table>
 
-          <%= form_with model: @admin, local: true do |f| %>
+        <%= form_with model: @admin, local: true do |f| %>
           <div class='mb-3'>
             <label for='formGroupExampleInput2' class='form-label'>Name</label>
             <%= f.text_field :name, id:'inputName', placeholder: '', class: 'form-control mb-3' %>
@@ -45,8 +45,8 @@
           <!--ゲストログインの場合は更新ボタンを表示させない=>以下の記述-->
           <%# if @admin.email != 'guest@example.com' %>
             <%= f.submit 'Update!', class: 'w-100 btn btn-secondary' %>
-            <% end %>
           <%# end %>
+        <% end %>
 
       </div>
 

@@ -21,6 +21,9 @@
 //= require fullcalendar
 //= require jquery.raty.js
 
+
+
+// infoページ スムーススクロール機能実装
 // リンクタグでページ移動した際に正しく読み込みがされるように「$(document).on('turbolinks:load',」を追加
 $(document).on('turbolinks:load',function() {
     var pagetop = $('#page_top');

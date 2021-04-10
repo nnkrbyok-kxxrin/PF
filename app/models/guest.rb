@@ -23,7 +23,7 @@ class Guest < ApplicationRecord
   # ・あらゆる検索条件であっても並び替え機能（keyword）は必ず実装
 
   def self.content_search_for(guests, content, model, method)
-    if model == "number"
+    if model == 'number'
       Guest.number_search_for(guests, content, method)
     else
       Guest.name_search_for(guests, content, method)

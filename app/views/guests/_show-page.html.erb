@@ -2,105 +2,105 @@
 <div class='background text-font'>
   <div class='container'>
     <div class='row py-5'>
-        <div class='col-md-6'>
-          <div class='guest-body'>
-            <table class='table table-borderless table-light table-customize mt-5 pt-3 pb-2 h-75'>
-              <thead>
-                <tr>
-                  <th scope='row'>
-                    <h4>Guest Infomation</h4>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope='row'>Number</th>
-                  <td><%= @guest.number %></td>
-                </tr>
-                <tr>
-                  <th scope='row'>Name</th>
-                  <td><%= @guest.name %></td>
-                </tr>
-                <tr>
-                  <th scope='row'>Name-Kana</th>
-                  <td><%= @guest.name_kana %></td>
-                </tr>
-                <tr>
-                  <th scope='row'>Phone-Number</th>
-                  <td><%= @guest.phone_number %></td>
-                </tr>
-                <tr>
-                  <th scope='row'>Address</th>
-                  <td>
-                    <% if @guest.address == '' %>
-                      <span>未記入</span>
-                    <% else %>
-                      <span><%= simple_format(h(@guest.address)) %></span>
+      <div class='col-md-6'>
+        <div class='guest-body'>
+          <table class='table table-borderless table-light table-customize mt-5 pt-3 pb-2 h-75'>
+            <thead>
+              <tr>
+                <th scope='row'>
+                  <h4>Guest Infomation</h4>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope='row'>Number</th>
+                <td><%= @guest.number %></td>
+              </tr>
+              <tr>
+                <th scope='row'>Name</th>
+                <td><%= @guest.name %></td>
+              </tr>
+              <tr>
+                <th scope='row'>Name-Kana</th>
+                <td><%= @guest.name_kana %></td>
+              </tr>
+              <tr>
+                <th scope='row'>Phone-Number</th>
+                <td><%= @guest.phone_number %></td>
+              </tr>
+              <tr>
+                <th scope='row'>Address</th>
+                <td>
+                  <% if @guest.address == '' %>
+                    <span>未記入</span>
+                  <% else %>
+                    <span><%= simple_format(h(@guest.address)) %></span>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <th scope='row'>Birthday</th>
+                <td>
+                  <% if @guest.birthday == nil %>
+                    <span>未記入</span>
+                  <% else %>
+                    <span><%= @guest.birthday %></span>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <th scope='row'>Sex</th>
+                <td><%= @guest.sex %></td>
+              </tr>
+              <tr>
+                <th scope='row'>Allergie</th>
+                <td>
+                  <% if @guest.allergie == '' %>
+                    <span>未記入</span>
+                  <% else %>
+                    <span><%= simple_format(h(@guest.allergie)) %></span>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <th scope='row'>Profession</th>
+                <td>
+                  <% if @guest.profession == '' %>
+                    <span>未記入</span>
+                  <% else %>
+                    <span><%= simple_format(h(@guest.profession)) %></span>
+                  <% end %>
+                </td>
+              </tr>
+              <!--<tr>-->
+              <!--  <th scope='row'>First Time</th>-->
+              <!--  <td><%#= @guest.created_at.strftime('%Y/%m/%d') %></td>-->
+              <!--</tr>-->
+              <!--自由な記入方法が出来るように、上記を下記に変更-->
+              <tr>
+                <th scope='row'>Date and Time</th>
+                <td><%= @guest.date_and_time %></td>
+              </tr>
+              <tr>
+                <th scope='row'>Number of visits</th>
+                <td>"<%= @guest.posts.count %>" Thank you very much!</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class='text-md-right'>
+                  <% if @guest.admin == current_admin %>
+                    <%= link_to edit_guest_path(@guest) do %>
+                      <span class='fas fa-edit fa-2x icon-link'></span>
+                    <% end %>｜
+                    <%= link_to guest_path(@guest), method: :delete do %>
+                      <span class='fas fa-trash-alt fa-2x icon-link pr-1'></span>
                     <% end %>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope='row'>Birthday</th>
-                  <td>
-                    <% if @guest.birthday == nil %>
-                      <span>未記入</span>
-                    <% else %>
-                      <span><%= @guest.birthday %></span>
-                    <% end %>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope='row'>Sex</th>
-                  <td><%= @guest.sex %></td>
-                </tr>
-                <tr>
-                  <th scope='row'>Allergie</th>
-                  <td>
-                    <% if @guest.allergie == '' %>
-                      <span>未記入</span>
-                    <% else %>
-                      <span><%= simple_format(h(@guest.allergie)) %></span>
-                    <% end %>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope='row'>Profession</th>
-                  <td>
-                    <% if @guest.profession == '' %>
-                      <span>未記入</span>
-                    <% else %>
-                      <span><%= simple_format(h(@guest.profession)) %></span>
-                    <% end %>
-                  </td>
-                </tr>
-                <!--<tr>-->
-                <!--  <th scope='row'>First Time</th>-->
-                <!--  <td><%#= @guest.created_at.strftime('%Y/%m/%d') %></td>-->
-                <!--</tr>-->
-                <!--自由な記入方法が出来るように、上記を下記に変更-->
-                <tr>
-                  <th scope='row'>Date and Time</th>
-                  <td><%= @guest.date_and_time %></td>
-                </tr>
-                <tr>
-                  <th scope='row'>Number of visits</th>
-                  <td>"<%= @guest.posts.count %>" Thank you very much!</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td class='text-md-right'>
-                    <% if @guest.admin == current_admin %>
-                        <%= link_to edit_guest_path(@guest) do %>
-                          <span class='fas fa-edit fa-2x icon-link'></span>
-                        <% end %>｜
-                        <%= link_to guest_path(@guest), method: :delete do %>
-                          <span class='fas fa-trash-alt fa-2x icon-link pr-1'></span>
-                        <% end %>
-                    <% end %>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                  <% end %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <% if @post.errors.any? %>
             <div>
@@ -112,78 +112,78 @@
             </div>
           <% end %>
 
-            <div class='new-post'>
-              <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
-                <%= f.text_field :date_and_time, placeholder: 'Date and Time', class: 'form-control mb-3' %>
-                <%= f.text_area :infomation, rows: '7', placeholder: 'Please enter the information!', class: 'form-control mb-3' %>
-                <%= f.text_field :tag_name, placeholder: 'Please enter the tag! [Example] ○○,△□', class: 'form-control mb-3' %>
-                <%= f.attachment_field :image, class: 'text mb-3' %></br>
-                <span class='text'>What is the smile of the guest?</span>
-                <div class='form-group row mt-2 ml-1' id='star'>
-                  <%= f.hidden_field :rate, id: :review_star %>
-                </div>
-                <!--以下、JavaScript-->
-                  <script>
-                  $('#star').empty();
-                  $('#star').raty({
-                    size     : 36,
-                    starOff:  '<%= asset_path('star-off.png') %>',
-                    starOn : '<%= asset_path('star-on.png') %>',
-                    starHalf: '<%= asset_path('star-half.png') %>',
-                    scoreName: 'post[rate]',
-                    half: true,
-                  });
-                  </script>
-                <%= f.submit 'add to', class: 'btn btn-secondary mb-5' %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-
-        <div class='col-md-6 mt-5 py-5 px-5 box-background'>
-          <div class='posts'>
-            <% @posts.each do |write| %>
-              <%#= write.created_at.strftime('%Y/%m/%d') %>
-              <!--自由な記入方法が出来るように、上記を下記に変更-->
-              <%= write.date_and_time %>｜
-                <% if write.admin == current_admin %>
-                  <%= link_to edit_guest_post_path(@guest.id, write.id) do %>
-                    <span class='fas fa-edit fa-lg icon-link mb-3'></span>
-                  <% end %>｜
-                  <%= link_to guest_post_path(write.guest,write), method: :delete do %>
-                    <span class='fas fa-trash-alt fa-lg icon-link mb-3'></span>
-                  <% end %>
-                <% end %>
-              <!--下記の記述の:fill, 40, 40（画像縮小）は読み込みが重くなる＋サイズ指定と重複するため不要-->
-              <!--%= attachment_image_tag @post, :image, :fill, 40, 40, format: 'jpeg', fallback: "phonto.JPG", size: "300x300" %>-->
-              <!--format: 'jpeg'も現時点で拡張子を指定して保存する必要がないため不要、下記の記述に変更-->
-              <%= attachment_image_tag write, :image, fallback: 'phonto3.JPG', size: '480x640', class: 'image-guest mb-3' %>
-              <div class='mb-3' id='star-rate-<%= write.id %>'></div>
-              <script>
-              $('#star-rate-<%= write.id %>').empty();
-              $('#star-rate-<%= write.id %>').raty({
-                size: 36,
-                starOff:  '<%= asset_path('star-off.png') %>',
-                starOn : '<%= asset_path('star-on.png') %>',
-                starHalf: '<%= asset_path('star-half.png') %>',
-                half: true,
-                readOnly: true,
-                score: <%= write.rate %>,
-              });
-              </script>
-              <% write.tags.each do |tag| %>
-                <p class='my-1'>#
-                <%= tag.tag_name %></p>
-              <% end %>
-              <span class='mt-3 mb-5'>
-                <p><%= simple_format(h(write.infomation)) %></p></span>
+          <div class='new-post'>
+            <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
+              <%= f.text_field :date_and_time, placeholder: 'Date and Time', class: 'form-control mb-3' %>
+              <%= f.text_area :infomation, rows: '7', placeholder: 'Please enter the information!', class: 'form-control mb-3' %>
+              <%= f.text_field :tag_name, placeholder: 'Please enter the tag! [Example] ○○,△□', class: 'form-control mb-3' %>
+              <%= f.attachment_field :image, class: 'text mb-3' %></br>
+              <span class='text'>What is the smile of the guest?</span>
+              <div class='form-group row mt-2 ml-1' id='star'>
+                <%= f.hidden_field :rate, id: :review_star %>
+              </div>
+              <!--以下、JavaScript-->
+                <script>
+                $('#star').empty();
+                $('#star').raty({
+                  size     : 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  scoreName: 'post[rate]',
+                  half: true,
+                });
+                </script>
+              <%= f.submit 'add to', class: 'btn btn-secondary mb-5' %>
             <% end %>
           </div>
         </div>
+      </div>
 
-        <div class='mx-auto mt-5'>
-          <%= paginate @posts, window: 2, remote: true %>
+      <div class='col-md-6 mt-5 py-5 px-5 box-background'>
+        <div class='posts'>
+          <% @posts.each do |write| %>
+            <%#= write.created_at.strftime('%Y/%m/%d') %>
+            <!--自由な記入方法が出来るように、上記を下記に変更-->
+            <%= write.date_and_time %>｜
+              <% if write.admin == current_admin %>
+                <%= link_to edit_guest_post_path(@guest.id, write.id) do %>
+                  <span class='fas fa-edit fa-lg icon-link mb-3'></span>
+                <% end %>｜
+                <%= link_to guest_post_path(write.guest,write), method: :delete do %>
+                  <span class='fas fa-trash-alt fa-lg icon-link mb-3'></span>
+                <% end %>
+              <% end %>
+            <!--下記の記述の:fill, 40, 40（画像縮小）は読み込みが重くなる＋サイズ指定と重複するため不要-->
+            <!--%= attachment_image_tag @post, :image, :fill, 40, 40, format: 'jpeg', fallback: "phonto.JPG", size: "300x300" %>-->
+            <!--format: 'jpeg'も現時点で拡張子を指定して保存する必要がないため不要、下記の記述に変更-->
+            <%= attachment_image_tag write, :image, fallback: 'phonto.JPG', size: '480x640', class: 'image-guest mb-3' %>
+            <div class='mb-3' id='star-rate-<%= write.id %>'></div>
+            <script>
+            $('#star-rate-<%= write.id %>').empty();
+            $('#star-rate-<%= write.id %>').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              score: <%= write.rate %>,
+            });
+            </script>
+            <% write.tags.each do |tag| %>
+              <p class='my-1'>#
+              <%= tag.tag_name %></p>
+            <% end %>
+            <span class='mt-3 mb-5'>
+              <p><%= simple_format(h(write.infomation)) %></p></span>
+          <% end %>
         </div>
+      </div>
+
+      <div class='mx-auto mt-5'>
+        <%= paginate @posts, window: 2, remote: true %>
+      </div>
 
     </div>
   </div>

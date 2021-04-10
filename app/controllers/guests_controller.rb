@@ -12,7 +12,7 @@ class GuestsController < ApplicationController
     #   @guest.address = "未記入"
     # end
     # 上記の記入は入力が空だった場合、DBに"未記入"と保存される
-    # View内でのif文記述であればDBにnilで保存される
+    # View内でのif文記述であればDBにnilで保存される => 今回はこちらでデフォルト値を実装
     if @guest.save
         redirect_to guests_path
     else
@@ -50,6 +50,7 @@ class GuestsController < ApplicationController
     @post = Post.new
     # Postのページング機能実装のため、下記を追記
     @posts = @guest.posts.page(params[:page]).reverse_order.per(1)
+  
     # Postのページング・非同期実装のため、下記４行を追記
     respond_to do |format|
       format.html

@@ -55,8 +55,8 @@
   border-spacing: 0;
   border-radius: 6px;
 
-@media screen and (max-width:480px) {
 // // 画面サイズが480pxまでの幅の場合に適応される
+@media screen and (max-width:480px) {
 .box-background{
   background-color: white;
   border-color: gray;
@@ -68,11 +68,7 @@
   border-radius: 6px;
   }}
 }
-
-// ゲストログイン フラッシュメッセージ
-.Notification{
-  color: #444444;
-}
+// ここまで
 
 // フッター
 footer{
@@ -86,7 +82,12 @@ footer{
   text-align: center;
 }
 
-// トップページ以外用フォント
+// ゲストログイン フラッシュメッセージ
+.Notification{
+  color: #444444;
+}
+
+// トップページ以外 フォント
 .text-font{
   font-family: 'Caveat', cursive;
   font-family: 'Noto Sans JP', sans-serif;
@@ -139,6 +140,7 @@ input:-ms-input-placeholder,
 text_field:-ms-input-placeholder {
 	color: #CCCCCC;
 }
+// ここまで
 
 // 文字リンク
 .text-link{
@@ -216,6 +218,7 @@ text_field:-ms-input-placeholder {
   border-radius: 5px;
   padding: 0.365rem 0.65rem;
 }
+// ここまで
 
 // aboutリンク
 .about-link{
@@ -245,6 +248,7 @@ text_field:-ms-input-placeholder {
 .message-text{
   color: #FF82B2;
 }
+// ここまで
 
 // infoリンク
 .icon-link-info{
@@ -292,6 +296,7 @@ text_field:-ms-input-placeholder {
   margin: auto;
   text-align: center;
 }
+// ここまで
 
 // カレンダー
 .calendar-color{
@@ -304,9 +309,9 @@ text_field:-ms-input-placeholder {
   border-color: gray;
 }
 
-// 今日の目標(お客様一覧ページ)
-@media screen and (max-width:480px) {
+// 今日の目標(guests一覧ページ)
 // 画面サイズが480pxまでの幅の場合に適応される
+@media screen and (max-width:480px) {
   .font-size{
     font-size: 22px;
 }}
@@ -327,6 +332,7 @@ text_field:-ms-input-placeholder {
 .task{
   color: gray;
 }
+// ここまで
 
 // タスクフォーム
 .task-form{
@@ -354,8 +360,8 @@ text_field:-ms-input-placeholder {
   color: gray;
 }
 
-@media screen and (max-width:480px) {
 // 画面サイズが480pxまでの幅の場合に適応される
+@media screen and (max-width:480px) {
   .message-font-size{
     font-size: 3vw;
     line-height: 1.5;
@@ -368,6 +374,7 @@ text_field:-ms-input-placeholder {
     padding-bottom: 0.2rem;
     padding-left: 0.2rem;
 }}
+// ここまで
 
 // エラーメッセージ（devise）
 .errors-message-devise{
@@ -423,8 +430,9 @@ table tbody tr:last-child th:first-child {
 table tbody tr:last-child th:last-child {
   border-radius: 0 0 5px 0;
 }
+// ここまで
 
-// お客様情報追加の画像
+// posts画像
 .image-guest{
   width: 100%;
   max-width: 100%;

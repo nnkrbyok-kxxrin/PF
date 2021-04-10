@@ -7,7 +7,8 @@
 
       <div class='table table-light task-table mt-5 px-3 py-3'>
         <div class='task mx-3 my-3'>
-          <h4 class='font-size'><span class='fas fa-star-and-crescent'></span> <span class='fas fa-sun'></span> Only one <%= link_to 'go', info_path, class: 'about-link' %>al for today!</h4></br>
+          <h4 class='font-size'><span class='fas fa-star-and-crescent'></span> <span class='fas fa-sun'></span> Only one <%= link_to 'go', info_path, class: 'about-link' %>al for today!</h4>
+          </br>
           <% @tasks.each do |task| %>
             <%= task.body %>
             <% if task.admin == current_admin %>
@@ -21,7 +22,7 @@
 
         <%= form_with model: @task_new, class: 'task-form mx-auto', local: true, url: tasks_path, method: :post do |f| %>
           <%= f.text_field :body, placeholder: 'Please enter the text!', class: 'form-control' %>
-        <%= f.submit 'Try!', class: 'btn btn-secondary task-btn mx-auto mt-2 mb-3' %>
+          <%= f.submit 'Try!', class: 'btn btn-secondary task-btn mx-auto mt-2 mb-3' %>
         <% end %>
 
       <table class='table table-light table-hover table-customize'>
@@ -34,23 +35,23 @@
         </thead>
         <tbody>
           <% @guests.each do |guest| %>
-          <tr>
-            <th scope='row'>
-              <!--下記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
-              <span id='bookmarks_buttons_<%= guest.id %>'>
-              <%= render 'bookmarks/bookmark-btn', guest: guest %>
-              </span>
-            </th>
-            <td>No.<%= guest.number %></td>
-            <td><%= link_to guest.name, guest_path(guest.id), class: 'text-link' %></td>
-          </tr>
+            <tr>
+              <th scope='row'>
+                <!--下記のguest.idはeach文のguestとは別物でjsへ渡すためのもの-->
+                <span id='bookmarks_buttons_<%= guest.id %>'>
+                <%= render 'bookmarks/bookmark-btn', guest: guest %>
+                </span>
+              </th>
+              <td>No.<%= guest.number %></td>
+              <td><%= link_to guest.name, guest_path(guest.id), class: 'text-link' %></td>
+            </tr>
           <% end %>
         </tbody>
       </table>
 
-        <div class='mx-auto my-4'>
-          <%= paginate @guests, window: 2, remote: true %>
-        </div>
+      <div class='mx-auto my-4'>
+        <%= paginate @guests, window: 2, remote: true %>
+      </div>
 
     </div>
   </div>
