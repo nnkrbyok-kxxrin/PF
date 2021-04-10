@@ -33,7 +33,9 @@ class GuestsController < ApplicationController
     @tasks = current_admin.tasks.all
     # @task = Task.find_by(params[:id])
     # ログインしている人に基づくものしか表示させないため、上記を下記に変更
-    @task = current_admin.tasks.find_by(params[:id])
+    # @task = current_admin.tasks.find_by(params[:id])
+    # idが必要ないため、上記を下記に変更
+    @task = current_admin.tasks
 
     # Postのページング・非同期実装のため、下記４行を追記
     respond_to do |format|
@@ -50,7 +52,7 @@ class GuestsController < ApplicationController
     @post = Post.new
     # Postのページング機能実装のため、下記を追記
     @posts = @guest.posts.page(params[:page]).reverse_order.per(1)
-  
+
     # Postのページング・非同期実装のため、下記４行を追記
     respond_to do |format|
       format.html

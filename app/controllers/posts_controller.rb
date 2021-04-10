@@ -34,7 +34,10 @@ class PostsController < ApplicationController
        @post.save_tags(tag_list)
        redirect_to guest_path(@guest.id)
     else
-        render :edit
+      # エラーメッセージを表示させた際に以前の情報をフォームに入れておくのであれば以下のコメントアウトを外す
+      # @post = Post.find(params[:id])
+       @tag_list = @post.tags.pluck(:tag_name).join(',')
+       render :edit
     end
   end
 

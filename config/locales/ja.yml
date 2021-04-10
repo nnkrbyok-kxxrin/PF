@@ -4,8 +4,10 @@ ja:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%m/%d %H:%M"
 
-ja:
   activerecord:
+    models:
+      admin: 管理者
+  
     attributes:
       admin:
         name: 名前
