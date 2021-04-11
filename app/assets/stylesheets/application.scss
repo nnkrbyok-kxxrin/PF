@@ -70,6 +70,14 @@
 }
 // ここまで
 
+// トップページ
+.top-message{
+  font-family: 'Caveat', cursive;
+  color: #444444;
+  font-size: 15ex;
+  text-align: center;
+}
+
 // フッター
 footer{
   font-family: 'Caveat', cursive;
@@ -82,13 +90,24 @@ footer{
   text-align: center;
 }
 
-// ゲストログイン フラッシュメッセージ
+// フラッシュメッセージ(Guest-login)
 .notice-guest-login{
   color: #444444;
 }
 
+// フラッシュメッセージ(My-page)
 .notice-my-page{
   color: gray;
+}
+
+// エラーメッセージ（devise）
+.errors-message-devise{
+  color: #444444;
+}
+
+// エラーメッセージ（Post）
+.errors-message-post{
+  color: #444444;
 }
 
 // トップページ以外 フォント
@@ -106,45 +125,6 @@ footer{
 .text-edit{
   color: #gray;
 }
-
-// プレースフォルダー
-/* for Webkit */
-.form-control::-webkit-input-placeholder{
-    color: #CCCCCC;
-}
-
-/* for Firefox */
-.form-control::-moz-placeholder{
-    color: #CCCCCC;
-}
-
-/* for Firefox 18以前 */
-.form-control:-moz-placeholder{
-    color: #CCCCCC;
-}
-
-/* for Windows IE */
-.form-control:-ms-input-placeholder{
-    color: #CCCCCC;
-}
-
-input::placeholder,
-text_field::placeholder {
-	color: #CCCCCC;
-}
-
-/* Edge */
-input::-ms-input-placeholder,
-text_field::-ms-input-placeholder {
-	color: #CCCCCC;
-}
-
-/* IE11 & IE10 */
-input:-ms-input-placeholder,
-text_field:-ms-input-placeholder {
-	color: #CCCCCC;
-}
-// ここまで
 
 // 文字リンク
 .text-link{
@@ -164,6 +144,11 @@ text_field:-ms-input-placeholder {
   background: linear-gradient(transparent 50%, #FFDDFF 50%);
 }
 
+// 文字下線（直線）
+.under-solid-line{
+  border-bottom: solid 3px #FF97C2;
+}
+
 // 文字下線（点線）
 .under-dotted-line{
   border-bottom: dotted 3px #BBFFFF;
@@ -179,50 +164,6 @@ text_field:-ms-input-placeholder {
   text-decoration: none;
   color: gray;
 }
-
-// トップページ
-.top-message{
-  font-family: 'Caveat', cursive;
-  color: #444444;
-  font-size: 15ex;
-  text-align: center;
-}
-
-// 検索
-.search-form-in{
-  border: 1px solid;
-  color: gray;
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.search-select{
-  box-sizing: border-box;
-  color: gray;
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.search-btn{
-  border: 1px solid;
-  background-color: white;
-  color: gray;
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  border-radius: 5px;
-  padding: 0.365rem 0.65rem;
-}
-// ここまで
 
 // aboutリンク
 .about-link{
@@ -251,6 +192,14 @@ text_field:-ms-input-placeholder {
 
 .message-text{
   color: #FF82B2;
+}
+
+.message-text-about{
+  color: #CCCCCC;
+}
+
+.message-text-info{
+  color: #FF69A3;
 }
 // ここまで
 
@@ -301,28 +250,6 @@ text_field:-ms-input-placeholder {
   text-align: center;
 }
 // ここまで
-
-// カレンダー
-.calendar-color{
-  color: gray;
-  background-color: white;
-  border: 1px solid;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 6px;
-  border-color: gray;
-}
-
-// 今日の目標(guests一覧ページ)
-// 画面サイズが480pxまでの幅の場合に適応される
-@media screen and (max-width:480px) {
-  .font-size{
-    font-size: 22px;
-}}
-
-.my-page-link{
-  margin-left: auto;
-}
 
 // タスクテーブル
 .task-table{
@@ -380,16 +307,6 @@ text_field:-ms-input-placeholder {
 }}
 // ここまで
 
-// エラーメッセージ（devise）
-.errors-message-devise{
-  color: #444444;
-}
-
-// エラーメッセージ（Post）
-.errors-message-post{
-  color: #444444;
-}
-
 // お客様一覧・検索結果一覧テーブル
 .table-customize{
   border-color: gray;
@@ -442,3 +359,101 @@ table tbody tr:last-child th:last-child {
   max-width: 100%;
   height: auto;
 }
+
+// カレンダー
+.calendar-color{
+  color: gray;
+  background-color: white;
+  border: 1px solid;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 6px;
+  border-color: gray;
+}
+
+// 今日の目標(guests一覧ページ)
+// 画面サイズが480pxまでの幅の場合に適応される
+@media screen and (max-width:480px) {
+  .font-size{
+    font-size: 22px;
+}}
+
+// マイページ
+.my-page-link{
+  margin-left: auto;
+}
+
+// プレースフォルダー
+/* for Webkit */
+.form-control::-webkit-input-placeholder{
+    color: #CCCCCC;
+}
+
+/* for Firefox */
+.form-control::-moz-placeholder{
+    color: #CCCCCC;
+}
+
+/* for Firefox 18以前 */
+.form-control:-moz-placeholder{
+    color: #CCCCCC;
+}
+
+/* for Windows IE */
+.form-control:-ms-input-placeholder{
+    color: #CCCCCC;
+}
+
+input::placeholder,
+text_field::placeholder {
+	color: #CCCCCC;
+}
+
+/* Edge */
+input::-ms-input-placeholder,
+text_field::-ms-input-placeholder {
+	color: #CCCCCC;
+}
+
+/* IE11 & IE10 */
+input:-ms-input-placeholder,
+text_field:-ms-input-placeholder {
+	color: #CCCCCC;
+}
+// ここまで
+
+// 検索
+.search-form-in{
+  border: 1px solid;
+  color: gray;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.search-select{
+  box-sizing: border-box;
+  color: gray;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.search-btn{
+  border: 1px solid;
+  background-color: white;
+  color: gray;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 5px;
+  padding: 0.365rem 0.65rem;
+}
+// ここまで
