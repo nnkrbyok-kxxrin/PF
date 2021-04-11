@@ -80,16 +80,16 @@
 　　ご来店ごとにお客様の情報を細かく記入。  
 　　画像やお客様のスマイル度も記録しておくことが可能です！  
 　　お客様を検索して過去の情報を確認することも可能なので、  
-　　次のご来店の際は前回の情報を確認してから入客できます！  
-　　  
+　　次回ご来店の際は前回の情報を確認してから入客ができます！  
+  
 　　些細なやりとりであっても「覚えてくれている」というのはお客様にとってとても嬉しいものです。  
 　　大切な顧客情報をしっかりと記録して、お客様からの「ありがとう」を集めましょう！！  
   
 ## 設計書  
 [テーブル定義書](https://docs.google.com/spreadsheets/d/1GMF8UBl32sjD90BU9ehY0gPHIcK-i6RJ/edit#gid=1243549839)  
 [詳細設計書](https://docs.google.com/spreadsheets/d/1KUBlmVuWgmrHWjXbKxLZC28kP2SSsFmuDWF3ndUcz8U/edit#gid=1850781366)  
-ER図  
-<img width="400" alt="ER図" src="https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6291219/PF-ER.diagram-Untitled.Diagram.pdf">  
+ER図：  
+<img width="400" src="https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6291219/PF-ER.diagram-Untitled.Diagram.pdf">  
   
 ## [機能一覧](https://docs.google.com/spreadsheets/d/17AZma3zC_Gj3DHHYpm3wZDIpFbjMoDgO7TZNrxL4emk/edit#gid=0)  
   
@@ -101,8 +101,8 @@ ER図
 - IDE：Cloud9  
   
 [インフラ設計書](https://docs.google.com/spreadsheets/d/1cm_Pcm9ioRpSSxVJUfpKEPiZMB0UHZ7A2KMnzXbhINs/edit#gid=0)  
-AWS構成図  
-<img width="400" alt="AWS構成図" src="https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6291222/PF-AWS.configuration.diagram-Untitled.Diagram.pdf">  
+AWS構成図：  
+<img width="400" src="https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6291222/PF-AWS.configuration.diagram-Untitled.Diagram.pdf">  
   
 ## 使用素材  
 GoogleFonts  
@@ -111,6 +111,3 @@ O-DAN
 <https://o-dan.net/ja/>  
 お名前.com  
 <https://www.onamae.com/>  
-
-https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6291219/PF-ER.diagram-Untitled.Diagram.pdf
-https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6291222/PF-AWS.configuration.diagram-Untitled.Diagram.pdf
