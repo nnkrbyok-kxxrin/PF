@@ -9,29 +9,28 @@
 ### テーマを選んだ理由  
 作者 前職：美容師／アイデザイナー／メイクアップアーティスト  
   
-私自身が現役時代に、  
-お客様と過ごした空間の情報を手軽に細かく書き記しておける  
+私自身が現役時代、  
+お客様と過ごした空間の情報を  
+自分の言葉で手軽に細かく書き記しておける  
 電子簡易カルテが「あったらいいな」と感じていたからです。  
   
-当時は紙カルテで顧客情報を管理しており、  
-お客様の数が増えるにつれてかさばるため管理スペースに困り、  
+当時は紙カルテで顧客情報を管理していました。  
+お客様の数が増えるにつれてカルテがかさばるため管理スペースに困り、  
 一年以上ご来店のないお客様のカルテを処分せざるをえないという  
 かなりアナログな管理方法でした。  
-機会があり、一年以上あけてでもまたご来店いただいたお客様がいらっしゃった時に  
+機会があり、一年以上の期間をあけてでも  
+またご来店いただいたお客様がいらっしゃった時に  
 以前の情報を確認することができず  
 担当者に鮮明な記憶が残っていない限りはまた「はじめまして」‥  
 内心こんなに失礼なことはないと感じていました。  
   
-また、お客様の情報を探す際も、かなりの数の紙カルテから探し出すので  
+また、お客様の情報を探す際も  
+かなりの数の紙カルテから手で探し出すので  
 時間も手間もかかり効率的ではありません。  
 意外とペンで記入すること自体にも時間を要すため、  
 お客様と過ごした空間の細やかな情報を  
 一人ひとり漏れなく書き記すのには営業後にかなりの時間を要しました。  
   
-ただ仕事だからと業務的に顧客情報を管理するのではなく、  
-施術者とお客様もひとつの人間関係の形であって  
-目の前の人に喜んでいただくには  
-技術力はもちろん、相手を知って尊重することが大切だと考えていました。  
 どんな細やかな情報も漏れなく記録し、  
 ご来店いただく度に上質な関係を築き、  
 お客様に喜んでいただける空間作りに役立つツールがあればと考えました。  
@@ -41,15 +40,17 @@
 当サイトの使い方はユーザー次第、  
 誰の目を気にすることなく自由に投稿できるツールです。  
   
-「お客様の"笑顔"が見たい！"ありがとう"が聞きたい！」  
-人としてどうあるべきか、どうありたいかを意識しながら  
-目の前のお客様に対してなにが出来るのか‥  
-どうしてこの仕事をしようと思ったのかなどを考えながら  
-業務感覚でなく、半分は日記感覚で自分の言葉で書き記し見える化ができれば  
+ただ仕事だからと業務的に顧客情報を管理するのではなく、  
+施術者とお客様もひとつの人間関係の形であって  
+目の前の人に喜んでいただくには  
+技術力はもちろん、相手を知って尊重することが大切だと考えます。  
+  
+業務感覚でなく、半分は日記感覚で自分自身を見つめ直しながら、  
+自分の言葉で情報を書き記し見える化ができれば  
 経験年数を重ねてもいつまでも初心を忘れることなく  
-きっといつもあたたかい気持ちでお客様と接することができるでしょう。  
+いつもあたたかい気持ちでお客様と接することができます。  
 お客様の情報を管理し、人間関係を築くだけでなく  
-このサイトを利用する時間が自身を見つめ直す時間にもなれたら嬉しく思います。  
+このサイトを利用する時間が自身を見つめ直す時間にもなれたらと考えます。  
   
 ### ターゲットユーザー  
 個人オーナー（主に女性）  
@@ -74,23 +75,23 @@
 　　それだと大事な顧客情報を100%書き留めておくことは難しいかも‥？  
   
 　　そんな時‥‥！！  
-　　施術工程の合間にパパッ！と端末記入出来る電子簡易カルテがあれば便利！  
+　　施術工程の合間にパパッ！と端末から記入出来る電子簡易カルテがあれば便利！  
   
 　　ご来店ごとにお客様の情報を細かく記入。  
 　　画像やお客様のスマイル度も記録しておくことが可能です！  
 　　お客様を検索して過去の情報を確認することも可能なので、  
 　　次のご来店の際は前回の情報を確認してから入客できます！  
-  
+　　  
 　　些細なやりとりであっても「覚えてくれている」というのはお客様にとってとても嬉しいものです。  
 　　大切な顧客情報をしっかりと記録して、お客様からの「ありがとう」を集めましょう！！  
   
 ## 設計書  
-ER図：<img src="https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6216201/Untitled.Diagram.pdf" width="320px">  
-テーブル定義書：https://docs.google.com/spreadsheets/d/1GMF8UBl32sjD90BU9ehY0gPHIcK-i6RJ/edit#gid=1243549839  
-詳細設計書：https://docs.google.com/spreadsheets/d/1KUBlmVuWgmrHWjXbKxLZC28kP2SSsFmuDWF3ndUcz8U/edit#gid=1850781366  
+[テーブル定義書](https://docs.google.com/spreadsheets/d/1GMF8UBl32sjD90BU9ehY0gPHIcK-i6RJ/edit#gid=1243549839)  
+[詳細設計書](https://docs.google.com/spreadsheets/d/1KUBlmVuWgmrHWjXbKxLZC28kP2SSsFmuDWF3ndUcz8U/edit#gid=1850781366)  
+ER図  
+<img width="400" alt="ER図" src="https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6291219/PF-ER.diagram-Untitled.Diagram.pdf">  
   
-## チャレンジ要素一覧：  
-https://docs.google.com/spreadsheets/d/17AZma3zC_Gj3DHHYpm3wZDIpFbjMoDgO7TZNrxL4emk/edit#gid=0  
+## [機能一覧](https://docs.google.com/spreadsheets/d/17AZma3zC_Gj3DHHYpm3wZDIpFbjMoDgO7TZNrxL4emk/edit#gid=0)  
   
 ## 開発環境  
 - OS：Linux(CentOS)  
@@ -99,11 +100,17 @@ https://docs.google.com/spreadsheets/d/17AZma3zC_Gj3DHHYpm3wZDIpFbjMoDgO7TZNrxL4
 - JSライブラリ：jQuery  
 - IDE：Cloud9  
   
+[インフラ設計書](https://docs.google.com/spreadsheets/d/1cm_Pcm9ioRpSSxVJUfpKEPiZMB0UHZ7A2KMnzXbhINs/edit#gid=0)  
+AWS構成図  
+<img width="400" alt="AWS構成図" src="https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6291222/PF-AWS.configuration.diagram-Untitled.Diagram.pdf">  
+  
 ## 使用素材  
--外部サービスの画像素材・音声素材を使用した場合  
-サービス名：GoogleFonts  
-URL：https://fonts.google.com/  
-サービス名：O-DAN  
-URL：https://o-dan.net/ja/  
-サービス名：お名前.com  
-URL：https://www.onamae.com/  
+GoogleFonts  
+<https://fonts.google.com/>  
+O-DAN  
+<https://o-dan.net/ja/>  
+お名前.com  
+<https://www.onamae.com/>  
+
+https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6291219/PF-ER.diagram-Untitled.Diagram.pdf
+https://github.com/nnkrbyok-kxxrin/thanks_collection/files/6291222/PF-AWS.configuration.diagram-Untitled.Diagram.pdf
