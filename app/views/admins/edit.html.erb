@@ -6,9 +6,13 @@
 
       <div class='col-md-8 py-4 box-background'>
 
-        <%# if flash[:notice] %>
-            <%#= flash[:notice] %>
-        <%# end %>
+          <div class='notice-my-page text-font'>
+            <% if @admin.present? %>
+              <% if flash[:alert] %>
+                  <%= flash[:alert] %>
+              <% end %>
+            <% end %>
+          </div>
 
         <% if @admin.errors.any? %>
           <div>

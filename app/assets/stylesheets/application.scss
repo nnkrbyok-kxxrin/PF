@@ -83,8 +83,12 @@ footer{
 }
 
 // ゲストログイン フラッシュメッセージ
-.Notification{
+.notice-guest-login{
   color: #444444;
+}
+
+.notice-my-page{
+  color: gray;
 }
 
 // トップページ以外 フォント

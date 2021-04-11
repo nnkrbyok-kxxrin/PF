@@ -19,6 +19,7 @@
         </div>
       </div>
 
+        <!--投稿がない場合にのみフォームを表示（一件投稿 => 投稿削除 => 再度投稿可能）-->
         <% if @task.size == 0 %>
           <%= form_with model: @task_new, class: 'task-form mx-auto', local: true, url: tasks_path, method: :post do |f| %>
             <%= f.text_field :body, placeholder: 'Please enter the text!', class: 'form-control' %>
