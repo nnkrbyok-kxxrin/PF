@@ -94,7 +94,7 @@ ER図：
 ## [機能一覧](https://docs.google.com/spreadsheets/d/17AZma3zC_Gj3DHHYpm3wZDIpFbjMoDgO7TZNrxL4emk/edit#gid=0)  
   
 ## 開発環境  
-- OS：Linux(CentOS)  
+- OS：Amazon Linux2(CentOS)  
 - 言語：HTML,CSS,JavaScript,Ruby,SQL  
 - フレームワーク：Ruby on Rails  
 - JSライブラリ：jQuery  
