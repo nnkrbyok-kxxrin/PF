@@ -6,7 +6,7 @@
 
       <div class='col-md-8 py-4 box-background'>
 
-          <div class='notice-my-page text-font'>
+          <div class='notice-my-page text-font mb-3'>
             <% if @admin.present? %>
               <% if flash[:alert] %>
                   <%= flash[:alert] %>
@@ -24,6 +24,8 @@
           </div>
         <% end %>
 
+        ※全て入力必須項目です！
+
         <table class='table table-borderless table-light table-customize mt-3'>
           <tbody>
             <tr>
@@ -40,11 +42,11 @@
         <%= form_with model: @admin, local: true do |f| %>
           <div class='mb-3'>
             <label class='form-label'>Name</label>
-            <%= f.text_field :name, placeholder: '', class: 'form-control mb-3' %>
+            <%= f.text_field :name, placeholder: '※名前', class: 'form-control mb-3' %>
           </div>
           <div class='mb-3'>
             <label class='form-label'>Email</label>
-            <%= f.text_field :email, placeholder: '', class: 'form-control mb-4' %>
+            <%= f.text_field :email, placeholder: '※メールアドレス', class: 'form-control mb-4' %>
           </div>
           <!--ゲストログインの場合は更新ボタンを表示させない=>以下の記述-->
           <%# if @admin.email != 'guest@example.com' %>
