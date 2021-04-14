@@ -99,6 +99,7 @@ ER図：
 - フレームワーク：Ruby on Rails  
 - JSライブラリ：jQuery  
 - IDE：Cloud9  
+- 推奨ブラウザ：Google Chrome  
   
 [インフラ設計書](https://docs.google.com/spreadsheets/d/1cm_Pcm9ioRpSSxVJUfpKEPiZMB0UHZ7A2KMnzXbhINs/edit#gid=0)  
 AWS構成図：  
