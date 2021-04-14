@@ -115,7 +115,7 @@
             <%= form_with model: @post, url: guest_posts_path(@guest), method: :post, local: true do |f| %>
               <%= f.text_field :date_and_time, placeholder: '※日時', class: 'form-control mb-3' %>
               <%= f.text_area :infomation, rows: '7', placeholder: '※情報（改行入力可能）', class: 'form-control mb-3' %>
-              <%= f.text_field :tag_name, placeholder: 'カンマ区切りでタグを入力してください（例）○○,△□', class: 'form-control mb-3' %>
+              <%= f.text_field :tag_name, placeholder: 'カンマ区切りでタグを入力（例）○○,△□', class: 'form-control mb-3' %>
               <%= f.attachment_field :image, class: 'text mb-3' %></br>
               <span class='text'>What is the smile of the guest?</span>
               <div class='form-group row mt-2 ml-1' id='star'>
