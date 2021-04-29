@@ -42,7 +42,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.find_by(id: params[:id], guest_id: params[:guest_id]).destroy
+    # Post.find_by(id: params[:id], guest_id: params[:guest_id]).destroy
+    # 2021/04/29(木)に上記を下記に変更
+    Post.find(params[:id]).destroy
     redirect_to guest_path(params[:guest_id])
   end
 
